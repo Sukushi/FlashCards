@@ -1,8 +1,8 @@
 package fr.dawan.flashcards.csv;
 
-import fr.dawan.flashcards.models.Card;
+import fr.dawan.flashcards.models.Category;
 import fr.dawan.flashcards.models.Niveau;
-import fr.dawan.flashcards.models.Tiroir;
+import fr.dawan.flashcards.models.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,8 +18,8 @@ public class CSVFlashCard {
     private static final String DELIMITER = ";";
     private static final String DATE_DELIMITER = ",";
 
-    public Tiroir importCommode() throws IOException{
-        Tiroir tiroir = new Tiroir();
+    public User importCommode() throws IOException{
+        User user = new User();
 
         try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
             br.lines().forEach( line -> {
@@ -28,16 +28,17 @@ public class CSVFlashCard {
                 Niveau niveau = Niveau.valueOf(values[0]);
                 List<Integer> dateInfo = Arrays.stream(values[1].split(DATE_DELIMITER)).map(Integer::valueOf).toList();
                 LocalDate date = LocalDate.of(dateInfo.get(0),dateInfo.get(1),dateInfo.get(2));
-                String question = values[2], answer = values[3];
+                Category category = new Category(values[2]);
+                String name = values[3], question = values[4], answer = values[5];
 
-                //tiroir.getCompartiments().get(niveau.ordinal()).addCard(new Card(question,answer,date));
+
             });
         }
 
-        return tiroir;
+        return user;
     }
 
-    public void exportCommode(Tiroir tiroir) {
+    public void exportCommode(User user) {
         try (FileWriter fw = new FileWriter(FILENAME)) {
 
         } catch (IOException e) {
