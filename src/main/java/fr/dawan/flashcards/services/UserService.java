@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.services;
 
+import fr.dawan.flashcards.entitites.Card;
 import fr.dawan.flashcards.entitites.User;
 import fr.dawan.flashcards.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;

@@ -28,7 +28,7 @@ public class CSVFlashCard {
                 Niveau niveau = Niveau.valueOf(values[0]);
                 List<Integer> dateInfo = Arrays.stream(values[1].split(DATE_DELIMITER)).map(Integer::valueOf).toList();
                 LocalDate date = LocalDate.of(dateInfo.get(0),dateInfo.get(1),dateInfo.get(2));
-                Category category = new Category(values[2]);
+                Category category = Category.valueOf(values[2]);
                 String name = values[3], question = values[4], answer = values[5];
 
 

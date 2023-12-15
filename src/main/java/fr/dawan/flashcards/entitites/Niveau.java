@@ -1,7 +1,5 @@
 package fr.dawan.flashcards.entitites;
 
-import jakarta.persistence.Entity;
-
 public enum Niveau {
     NIVEAU1(1),
     NIVEAU2(3),

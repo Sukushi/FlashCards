@@ -1,13 +1,11 @@
 package fr.dawan.flashcards.entitites;
 
-import fr.dawan.flashcards.entitites.BaseEntity;
-import fr.dawan.flashcards.entitites.Card;
-import fr.dawan.flashcards.entitites.Niveau;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
@@ -19,9 +17,12 @@ import java.time.LocalDate;
 @ToString
 public class Passage extends BaseEntity {
 
+    @ManyToOne
     private Card card;
     private Niveau niveau;
     private LocalDate dateUpdate;
+    @ManyToOne
+    private User user;
 
     public boolean isDaily() {
         return LocalDate.now().compareTo(dateUpdate) >= niveau.getDuree();

@@ -1,6 +1,7 @@
 package fr.dawan.flashcards.entitites;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import lombok.experimental.Accessors;
 
