@@ -19,6 +19,10 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
@@ -27,6 +31,11 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -38,7 +47,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	<!-- add mano -->
+	<!-- add dependency -->
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
@@ -50,7 +59,7 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.8.10</version>
 		</dependency>
-	<!-- add mano -->
+	<!-- end dependency -->
 	</dependencies>
 
 	<reporting>
@@ -76,7 +85,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-	<!-- add mano -->
+	<!-- add plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -126,7 +135,7 @@
 					</execution>
 				</executions>
 			</plugin>
-	<!-- add mano -->
+	<!-- end plugin -->
 		</plugins>
 	</build>
 
