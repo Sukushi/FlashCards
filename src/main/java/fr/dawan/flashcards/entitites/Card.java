@@ -1,18 +1,17 @@
-package fr.dawan.flashcards.models;
+package fr.dawan.flashcards.entitites;
 
-import fr.dawan.flashcards.entitites.BaseEntity;
+import jakarta.persistence.Entity;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
-
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
 @ToString
-public class Card extends BaseEntity implements Serializable {
+public class Card extends BaseEntity {
 
     private String title;
     private Category category;

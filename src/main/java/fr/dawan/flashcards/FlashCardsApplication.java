@@ -1,11 +1,11 @@
 package fr.dawan.flashcards;
 
-import fr.dawan.flashcards.csv.CSVFlashCard;
-import fr.dawan.flashcards.models.*;
-import org.springframework.boot.SpringApplication;
+import fr.dawan.flashcards.entitites.Card;
+import fr.dawan.flashcards.entitites.Niveau;
+import fr.dawan.flashcards.entitites.Passage;
+import fr.dawan.flashcards.entitites.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;

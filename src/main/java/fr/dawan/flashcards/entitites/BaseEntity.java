@@ -6,12 +6,12 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+@MappedSuperclass
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
     @Id
