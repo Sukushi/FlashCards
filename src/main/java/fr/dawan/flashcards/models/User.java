@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.models;
 
+import fr.dawan.flashcards.entitites.BaseEntity;
 import lombok.*;
 import lombok.experimental.Accessors;
 
