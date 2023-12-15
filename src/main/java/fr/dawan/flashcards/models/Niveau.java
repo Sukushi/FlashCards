@@ -9,17 +9,14 @@ public enum Niveau {
     NIVEAU6(30),
     NIVEAU7(90);
 
-    private int niveau;
+    private final int duree;
 
-    Niveau(int niveau) {
-        this.niveau = niveau;
+    Niveau(int duree) {
+        this.duree = duree;
     }
 
     public int getDuree() {
-        return niveau;
+        return duree;
     }
 
-    public void setNiveau(int niveau) {
-        this.niveau = niveau;
-    }
 }

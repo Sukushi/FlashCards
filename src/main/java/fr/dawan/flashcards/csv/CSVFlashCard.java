@@ -30,7 +30,7 @@ public class CSVFlashCard {
                 LocalDate date = LocalDate.of(dateInfo.get(0),dateInfo.get(1),dateInfo.get(2));
                 String question = values[2], answer = values[3];
 
-                tiroir.getCompartiments().get(niveau.ordinal()).addCard(new Card(question,answer,date));
+                //tiroir.getCompartiments().get(niveau.ordinal()).addCard(new Card(question,answer,date));
             });
         }
 

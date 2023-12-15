@@ -14,6 +14,7 @@ import java.util.List;
 @ToString
 public class Tiroir implements Serializable {
 
+    private double id;
     private List<Compartiment> compartiments;
 
 }

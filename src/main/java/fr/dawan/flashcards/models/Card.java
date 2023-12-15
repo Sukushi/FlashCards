@@ -14,8 +14,12 @@ import java.time.LocalDate;
 @ToString
 public class Card implements Serializable {
 
+    private double id;
+    private String title;
+    private LocalDate dateCreate;
+    private LocalDate dateUpdate;
+    private Category category;
     private String question;
     private String answer;
-    private LocalDate date;
 
 }
