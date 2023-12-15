@@ -4,6 +4,7 @@ import fr.dawan.flashcards.entitites.Card;
 import fr.dawan.flashcards.entitites.Niveau;
 import fr.dawan.flashcards.entitites.Passage;
 import fr.dawan.flashcards.entitites.User;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
@@ -14,6 +15,8 @@ import java.util.List;
 public class FlashCardsApplication {
 
 	public static void main(String[] args) {
+		SpringApplication.run(FlashCardsApplication.class, args);
+
 		LocalDate date = LocalDate.now();
 		LocalDate old = LocalDate.of(2023,12,8);
 		System.out.println("--- dates until ---");
@@ -32,9 +35,8 @@ public class FlashCardsApplication {
 
 		System.out.println("--- tiroir ---");
 		User user = new User();
-		List<Card> list = user.getTiroir().stream()
-				.filter(passage -> passage.getNiveau() == Niveau.NIVEAU2).map(Passage::getCard).toList();// récupère que les card de niveau 2
-		List<Card> list1 = user.getTiroir().stream().filter(Passage::isDaily).map(Passage::getCard).toList(); // récupère les daily
+		//List<Card> list = user.getTiroir().stream().filter(passage -> passage.getNiveau() == Niveau.NIVEAU2).map(Passage::getCard).toList();// récupère que les card de niveau 2
+		//List<Card> list1 = user.getTiroir().stream().filter(Passage::isDaily).map(Passage::getCard).toList(); // récupère les daily
 
 
 		/*System.out.println("---");
