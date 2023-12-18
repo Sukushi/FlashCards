@@ -28,5 +28,9 @@ public class PassageService {
     public List<Card> findByNiveauAndUserId(String niveau, long userId) {
         return repository.findByNiveauAndUserId(Niveau.valueOf(niveau),userId).stream().map(Passage::getCard).toList();
     }
+	
+	public List<Card> findByUserId(long userId) {
+		return repository.findByUserId(userId).stream().map(Passage::getCard).toList();
+	}
 
 }

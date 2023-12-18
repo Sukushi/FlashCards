@@ -9,5 +9,7 @@ import java.util.List;
 public interface PassageRepository extends JpaRepository<Passage,Long> {
 
     List<Passage> findByNiveauAndUserId(Niveau niveau, long userId);
+	
+	List<Passage> findByUserId(long userId);
 
 }
