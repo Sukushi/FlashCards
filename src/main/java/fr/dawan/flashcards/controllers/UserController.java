@@ -13,10 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("users")
-// localhost:8080/users -> display user's table
-// localhost:8080/users/{id} -> display user's information from user.id = id
 public class UserController {
-
     private final UserService service;
 
     @GetMapping
@@ -28,5 +25,4 @@ public class UserController {
     public User getById(@PathVariable long id) {
         return service.getById(id);
     }
-
 }
