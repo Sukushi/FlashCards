@@ -1,8 +1,11 @@
-package fr.dawan.flashcards.entitites;
+package fr.dawan.flashcards.passage;
 
+import fr.dawan.flashcards.card.Card;
+import fr.dawan.flashcards.generic.BaseEntity;
+import fr.dawan.flashcards.entitites.Niveau;
+import fr.dawan.flashcards.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import lombok.*;
 import lombok.experimental.Accessors;
 

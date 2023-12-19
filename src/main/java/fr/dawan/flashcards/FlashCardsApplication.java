@@ -1,15 +1,12 @@
 package fr.dawan.flashcards;
 
-import fr.dawan.flashcards.entitites.Card;
 import fr.dawan.flashcards.entitites.Niveau;
-import fr.dawan.flashcards.entitites.Passage;
-import fr.dawan.flashcards.entitites.User;
+import fr.dawan.flashcards.user.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication
 public class FlashCardsApplication {

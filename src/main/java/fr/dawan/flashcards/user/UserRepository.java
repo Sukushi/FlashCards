@@ -1,7 +1,6 @@
-package fr.dawan.flashcards.repositories;
+package fr.dawan.flashcards.user;
 
 
-import fr.dawan.flashcards.entitites.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

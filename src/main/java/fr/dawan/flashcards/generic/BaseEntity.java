@@ -1,4 +1,4 @@
-package fr.dawan.flashcards.entitites;
+package fr.dawan.flashcards.generic;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -2,7 +2,7 @@ package fr.dawan.flashcards.csv;
 
 import fr.dawan.flashcards.entitites.Category;
 import fr.dawan.flashcards.entitites.Niveau;
-import fr.dawan.flashcards.entitites.User;
+import fr.dawan.flashcards.user.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
