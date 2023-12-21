@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("cards")
-public class CardController extends GenericController<Card, CardService> {
-	
+public class CardController extends GenericController<CardDto, CardService> {
 	public CardController(CardService service) {
 		super(service);
 	}
-	
 }

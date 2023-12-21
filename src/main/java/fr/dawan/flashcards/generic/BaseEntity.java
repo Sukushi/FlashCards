@@ -1,17 +1,18 @@
 package fr.dawan.flashcards.generic;
 
 import jakarta.persistence.*;
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 @MappedSuperclass
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
+@AllArgsConstructor
 public abstract class BaseEntity implements Serializable {
 
     @Id
@@ -19,5 +20,4 @@ public abstract class BaseEntity implements Serializable {
     private long id;
     @Version
     private int version;
-
 }
