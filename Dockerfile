@@ -1,5 +1,5 @@
 FROM rsunix/yourkit-openjdk17
 
-ADD target/FlashCards.jar FlashCards.jar
-ENTRYPOINT ["java", "-jar", "FlashCards.jar"]
+ADD target/flash-cards.jar flash-cards.jar
+ENTRYPOINT ["java", "-jar", "flash-cards.jar"]
 EXPOSE 8080
