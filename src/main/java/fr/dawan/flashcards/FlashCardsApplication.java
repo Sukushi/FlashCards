@@ -1,7 +1,7 @@
 package fr.dawan.flashcards;
 
-import fr.dawan.flashcards.entitites.Niveau;
-import fr.dawan.flashcards.user.User;
+import fr.dawan.flashcards.business.entitites.Niveau;
+import fr.dawan.flashcards.business.user.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
