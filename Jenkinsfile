@@ -35,7 +35,7 @@ pipeline {
 					} catch (e) {
 						echo '404 Not Found : flashcards'
 					}
-					bat "docker run --name flashcards -d -p 8085:8080 flashcards:latest FlashCards.jar"
+					bat "docker run --name flashcards -d -p 9090:8080 flashcards:latest FlashCards.jar"
 				}
 			}
 		}
