@@ -11,13 +11,10 @@ import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
 
-@Entity
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@ToString
 public class Passage extends BaseEntity {
 
     @ManyToOne

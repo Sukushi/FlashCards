@@ -7,10 +7,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageRepository> implements PassageService {
+public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageRepository,PassageDto,PassageMapper> implements PassageService {
 	
-	public PassageServiceBDD(PassageRepository repository) {
-		super(repository);
+	public PassageServiceBDD(PassageRepository repository, PassageMapper mapper) {
+		super(repository, mapper);
 	}
 	
 	

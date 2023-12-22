@@ -1,5 +1,11 @@
 package fr.dawan.flashcards.business.entitites;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
 public enum Niveau {
     NIVEAU1(1),
     NIVEAU2(3),

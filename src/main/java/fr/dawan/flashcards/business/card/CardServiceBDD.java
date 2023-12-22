@@ -9,14 +9,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class CardServiceBDD extends GenericServiceBDD<Card,CardRepository,CardDto,CardMapper> implements CardService {
 
-	public CardServiceBDD(CardRepository repository,CardMapper mapper){
+    private final CardMapper cardMapper;
+
+    public CardServiceBDD(CardRepository repository,CardMapper mapper,
+                          CardMapper cardMapper){
         super(repository, mapper);
 
+        this.cardMapper = cardMapper;
     }
 
     @Override
     public Page<CardDto> findById(long id, Pageable pageable) {
-        return repository.findById(id,pageable).map(mapper::toDto);
+        return repository.findById(id, pageable).map(cardMapper::toDto);
     }
 
     @Override

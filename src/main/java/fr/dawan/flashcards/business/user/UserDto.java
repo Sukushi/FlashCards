@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 public class UserDto {
     private String name;
-    @OneToMany(mappedBy = "user")
+    // TODO Do I really need this  ? Ask Yannis Need Annotations in Dtos
     private List<Passage> tiroir;
-
 }
