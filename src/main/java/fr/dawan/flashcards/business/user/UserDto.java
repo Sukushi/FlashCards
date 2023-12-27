@@ -12,7 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
+    private long id;
+    private int version;
     private String name;
-    // TODO Do I really need this  ? Ask Yannis Need Annotations in Dtos
     private List<Passage> tiroir;
 }

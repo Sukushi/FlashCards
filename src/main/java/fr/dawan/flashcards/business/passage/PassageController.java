@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("passages")
 // localhost:8080/users -> display user's table
 // localhost:8080/users/{id} -> display user's information from user.id = id
-public class PassageController extends GenericController<Passage, PassageService> {
+public class PassageController extends GenericController<PassageDto, PassageService> {
 	
 	public PassageController(PassageService service) {
 		super(service);
