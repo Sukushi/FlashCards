@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("users")
-public class UserController extends GenericController<User, UserService> {
+public class UserController extends GenericController<UserDto, UserService> {
 	
 	public UserController(UserService service) {
 		super(service);
 	}
 	
 	@GetMapping
-    public Page<User> findAll(Pageable pageable) {
+    public Page<UserDto> findAll(Pageable pageable) {
         return service.findAll(pageable);
     }
 	
