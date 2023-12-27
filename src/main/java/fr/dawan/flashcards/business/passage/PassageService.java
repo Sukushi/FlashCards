@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface PassageService extends GenericService<PassageDto> {
 	
-	Page<Passage> findByNiveauAndUserId(Niveau niveau, long userId, Pageable pageable);
+	Page<PassageDto> findByNiveauAndUserId(Niveau niveau, long userId, Pageable pageable);
 	
-	Page<Passage> findByUserId(long userId, Pageable pageable);
+	Page<PassageDto> findByUserId(long userId, Pageable pageable);
 }

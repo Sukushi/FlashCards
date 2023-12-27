@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 
 import java.util.List;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

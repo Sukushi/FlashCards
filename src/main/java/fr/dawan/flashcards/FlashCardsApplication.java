@@ -34,7 +34,9 @@ public class FlashCardsApplication {
 		User user = new User();
 		//List<Card> list = user.getTiroir().stream().filter(passage -> passage.getNiveau() == Niveau.NIVEAU2).map(Passage::getCard).toList();// récupère que les card de niveau 2
 		//List<Card> list1 = user.getTiroir().stream().filter(Passage::isDaily).map(Passage::getCard).toList(); // récupère les daily
-
+		
+		System.out.println("--- toString ---");
+		System.out.println(date.toString());
 
 		/*System.out.println("---");
 		CSVFlashCard csv = new CSVFlashCard();

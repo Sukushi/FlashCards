@@ -13,14 +13,13 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		super(repository, mapper);
 	}
 	
-	
 	@Override
-	public Page<Passage> findByNiveauAndUserId(Niveau niveau, long userId, Pageable pageable) {
-		return repository.findByNiveauAndUserId(niveau,userId,pageable);
+	public Page<PassageDto> findByNiveauAndUserId(Niveau niveau, long userId, Pageable pageable) {
+		return repository.findByNiveauAndUserId(niveau,userId,pageable).map(mapper::toDto);
 	}
 	
 	@Override
-	public Page<Passage> findByUserId(long userId, Pageable pageable) {
-		return repository.findByUserId(userId,pageable);
+	public Page<PassageDto> findByUserId(long userId, Pageable pageable) {
+		return repository.findByUserId(userId,pageable).map(mapper::toDto);
 	}
 }

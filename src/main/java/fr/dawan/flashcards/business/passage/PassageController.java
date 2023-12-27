@@ -1,6 +1,6 @@
 package fr.dawan.flashcards.business.passage;
 
-import fr.dawan.flashcards.business.card.Card;
+import fr.dawan.flashcards.business.card.CardDto;
 import fr.dawan.flashcards.business.generic.GenericController;
 import fr.dawan.flashcards.business.entitites.Niveau;
 import org.springframework.data.domain.Page;
@@ -22,13 +22,13 @@ public class PassageController extends GenericController<PassageDto, PassageServ
 	
 	@GetMapping("/niveau/{niveau}/{userId}")
     // localhost:8080/passages/niveau/NIVEAU2/1
-    public Page<Card> findByNiveauAndUserId(@PathVariable String niveau, @PathVariable long userId, Pageable pageable) {
-        return service.findByNiveauAndUserId(Niveau.valueOf(niveau),userId, pageable).map(Passage::getCard);
+    public Page<CardDto> findByNiveauAndUserId(@PathVariable String niveau, @PathVariable long userId, Pageable pageable) {
+        return null; //service.findByNiveauAndUserId(Niveau.valueOf(niveau),userId, pageable).map(Passage::getCard);
     }
 	
 	@GetMapping("user/{userId}")
 	// localhost:8080/passages/user/1
-	public Page<Passage> findByUserId(@PathVariable long userId, Pageable pageable) {
+	public Page<PassageDto> findByUserId(@PathVariable long userId, Pageable pageable) {
 		return service.findByUserId(userId,pageable);
 	}
 
