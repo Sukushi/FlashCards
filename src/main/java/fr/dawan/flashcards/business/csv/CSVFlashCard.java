@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.business.csv;
 
+import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.entitites.Category;
 import fr.dawan.flashcards.business.entitites.Niveau;
 import fr.dawan.flashcards.business.user.User;
@@ -36,6 +37,19 @@ public class CSVFlashCard {
         }
 
         return user;
+    }
+
+    public List<Card> importList() throws IOException{
+
+        try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
+            br.lines().forEach( line -> {
+                String[] values = line.split(DELIMITER);
+
+            });
+
+        } catch (Exception e){
+            System.out.println("Impossible d'importer le CSV en List<Card>");
+        }
     }
 
     public void exportCommode(User user) {
