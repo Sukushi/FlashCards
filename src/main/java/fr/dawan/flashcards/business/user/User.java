@@ -10,7 +10,9 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
@@ -19,6 +21,7 @@ public class User extends BaseEntity {
     private String name;
     private String code; // spring security à implémenter
     @OneToMany(mappedBy = "user")
-    private List<Passage> tiroir;
+	@ToString.Exclude
+	private List<Passage> tiroir;
 
 }

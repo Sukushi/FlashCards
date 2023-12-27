@@ -17,7 +17,7 @@ import java.util.List;
 
 public class CSVFlashCard {
 
-	private static String FILENAME = "commode.fr.dawan.commode.csv";
+	private static String FILENAME = "commode.csv";
 	private static final String DELIMITER = ";";
 	private static final String DATE_DELIMITER = "-";
 
@@ -70,10 +70,7 @@ public class CSVFlashCard {
 		fw.append(card.getQuestion());
 		fw.append(DELIMITER);
 		fw.append(card.getAnswer());
-	}
-	
-	private String appendDate(LocalDate dateUpdate) {
-		return null;
+		fw.append("\n");
 	}
 	
 }
