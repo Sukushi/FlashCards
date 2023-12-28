@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public abstract class GenericController<
-        D,
-        S extends GenericService<D>
-        > {
+public abstract class GenericController<D,S extends GenericService<D>> {
     protected final S service;
     @GetMapping
     public Page<D> findAll(Pageable pageable) {

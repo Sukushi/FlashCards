@@ -7,12 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 @RequiredArgsConstructor
-public abstract class GenericServiceBDD<
-        E extends BaseEntity,
-        R extends JpaRepository<E, Long>,
-        D,
-        M extends GenericMapper<E,D>
-        > implements GenericService<D> {
+public abstract class GenericServiceBDD<E extends BaseEntity,R extends JpaRepository<E, Long>,
+        D, M extends GenericMapper<E,D>> implements GenericService<D> {
 
     protected final R repository;
     protected final M mapper;
