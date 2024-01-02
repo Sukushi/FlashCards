@@ -22,7 +22,8 @@ public class CSVFlashCard {
 	private static final String DATE_DELIMITER = "-";
 
 	public User importCommode(User user) throws IOException{
-		//User user = new User("localName","localPassword",new ArrayList<>(),"localEmail");
+		// Now is an argument
+		// User user = new User("localName","localPassword",new ArrayList<>(),"localEmail");
 
 		try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
 			br.lines().forEach( line -> {
