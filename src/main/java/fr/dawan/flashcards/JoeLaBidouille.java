@@ -1,5 +1,6 @@
 package fr.dawan.flashcards;
 
+import fr.dawan.flashcards.business.user.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,18 @@ public class JoeLaBidouille {
         log.info("Je lance la Spring Application : Run ");
         SpringApplication.run(JoeLaBidouille.class, args);
 
+        // Data for Joe
+        String name = "Joe";
+        String password = "Joespassword";
+        String email = "joe@email.com";
+
+        // Création d'un SUPER USER
+        User joe = new User(name,password,email);
+        // Connexion - Authentification
+
+        // Affichage
+
+        // Création d'une carte
 
     }
 }

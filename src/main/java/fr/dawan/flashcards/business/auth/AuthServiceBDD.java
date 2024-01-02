@@ -6,6 +6,7 @@ import fr.dawan.flashcards.business.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +14,14 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthServiceBDD implements AuthService {
     private final UserRepository repository;
-    private final PasswordEncoder encoder;
+  /*  private final PasswordEncoder encoder;*/
+    // Default DelegatingPasswordEncoder
+    PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
     private final UserMapper mapper;
 
     @Override
     public void register(RegisterDto dto) {
-        String encodedPassword = encoder.encode(dto.getPassword());
+        String encodedPassword = passwordEncoder.encode(dto.getPassword());
         User newUser = new User(dto.getUsername(),encodedPassword,dto.getEmail());
         repository.save(newUser);
     }
