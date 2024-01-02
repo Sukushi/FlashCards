@@ -19,9 +19,14 @@ public class JoeLaBidouille {
         String password = "Joespassword";
         String email = "joe@email.com";
 
+        // Data from csv
+
+
         // Création d'un SUPER USER
         User joe = new User(name,password,email);
+
         // Connexion - Authentification
+        joe.getAuthorities();
 
         // Affichage
 
