@@ -29,6 +29,7 @@ public class JoeLaBidouille {
         superJoe.setRole("ADMIN");
 
         // Connexion - Authentification
+
         joe.getAuthorities();
 
         // Affichage
