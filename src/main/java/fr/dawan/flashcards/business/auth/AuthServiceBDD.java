@@ -19,6 +19,11 @@ public class AuthServiceBDD implements AuthService {
     PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
     private final UserMapper mapper;
 
+    public AuthServiceBDD(UserRepository repository, UserMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
+
     @Override
     public void register(RegisterDto dto) {
         String encodedPassword = passwordEncoder.encode(dto.getPassword());

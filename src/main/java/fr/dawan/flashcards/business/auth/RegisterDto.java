@@ -11,4 +11,13 @@ public class RegisterDto {
     private String email;
     private String password;
     private String confirmPassword;
+
+    public CharSequence getPassword() {
+    }
+
+    public String getUsername() {
+    }
+
+    public String getEmail() {
+    }
 }

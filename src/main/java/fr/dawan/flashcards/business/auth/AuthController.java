@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService service;
+
+    public AuthController(AuthService service) {
+        this.service = service;
+    }
+
     @PostMapping("register")
     void register(RegisterDto registerDto) {
         service.register(registerDto);
