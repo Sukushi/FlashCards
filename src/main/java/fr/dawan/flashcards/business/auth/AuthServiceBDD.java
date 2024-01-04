@@ -13,16 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthServiceBDD implements AuthService {
-    private final UserRepository repository;
+    private UserRepository repository;
   /*  private final PasswordEncoder encoder;*/
     // Default DelegatingPasswordEncoder
     PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    private final UserMapper mapper;
-
-    public AuthServiceBDD(UserRepository repository, UserMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
+    private UserMapper mapper;
 
     @Override
     public void register(RegisterDto dto) {
