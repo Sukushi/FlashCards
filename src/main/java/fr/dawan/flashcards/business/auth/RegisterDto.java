@@ -13,11 +13,14 @@ public class RegisterDto {
     private String confirmPassword;
 
     public CharSequence getPassword() {
+        return password;
     }
 
     public String getUsername() {
+        return username;
     }
 
     public String getEmail() {
+        return email;
     }
 }
