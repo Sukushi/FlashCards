@@ -12,4 +12,8 @@ public class LoginResponseDto {
     private UserDto user;
     private String token;
 
+    public LoginResponseDto(UserDto user, String token) {
+        this.user = user;
+        this.token = token;
+    }
 }
