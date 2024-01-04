@@ -31,6 +31,9 @@ public class RegisterDto {
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
 
     public String getUsername() {
         return username;
