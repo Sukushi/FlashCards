@@ -8,11 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
-    private final AuthService service;
-
-    public AuthController(AuthService service) {
-        this.service = service;
-    }
+    private AuthService service;
 
     @PostMapping("register")
     void register(RegisterDto registerDto) {

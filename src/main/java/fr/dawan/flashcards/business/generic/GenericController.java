@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@RestController
 public abstract class GenericController<D,S extends GenericService<D>> {
     protected final S service;
     @GetMapping

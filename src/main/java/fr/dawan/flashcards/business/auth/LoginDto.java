@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class LoginDto {
     private String password;
     private String email;
-
+/*
     public String getEmail() {
         return email;
     }
@@ -24,5 +24,5 @@ public class LoginDto {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 }

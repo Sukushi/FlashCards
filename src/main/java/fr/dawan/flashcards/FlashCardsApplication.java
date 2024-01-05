@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+/*
 @SpringBootApplication
+*/
 public class FlashCardsApplication {
 
 	public static void main(String[] args) {

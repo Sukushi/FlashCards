@@ -11,7 +11,7 @@ public class RegisterDto {
     private String email;
     private String password;
     private String confirmPassword;
-
+/*
     public CharSequence getPassword() {
         return password;
     }
@@ -41,5 +41,5 @@ public class RegisterDto {
 
     public String getEmail() {
         return email;
-    }
+    }*/
 }
