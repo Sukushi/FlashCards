@@ -1,9 +1,11 @@
 package fr.dawan.flashcards.business.conf;
 
+import fr.dawan.flashcards.business.user.BDDUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,10 +36,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .httpBasic(); // (7)
     }
 
-/*    @Bean
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }*/
+    }
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
   /*  @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -50,14 +56,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         return http.build();
     }*/
 
-/*    @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails userDetails = UserBuilder
-                .username("user")
-                .password("password")
-                .roles("USER")
-                .build();
+        return new BDDUserDetailsService(); // (1)
+    }
 
-        return new InMemoryUserDetailsManager(userDetails);
-    }*/
+    @Override
+    public void init(WebSecurity builder) throws Exception {
+
+    }
+
+    @Override
+    public void configure(WebSecurity builder) throws Exception {
+
+    }
 }
