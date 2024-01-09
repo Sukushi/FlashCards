@@ -23,9 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {  // (2)
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home").permitAll() // (3)
+                .requestMatchers("/", "/home","/login").permitAll() // (3)
                 .anyRequest().authenticated() // (4)
-                .and()
+                .and();/*
                 .formLogin() // (5)
                 .loginPage("/login") // (5)
                 .permitAll()
@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .logout() // (6)
                 .permitAll()
                 .and()
-                .httpBasic(); // (7)
+                .httpBasic(); // (7)*/
     }
 
     @Bean
@@ -44,17 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-  /*  @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeHttpRequests((authorize) -> authorize
-                        .anyRequest().authenticated()
-                )
-                .httpBasic(Customizer.withDefaults())
-                .formLogin(Customizer.withDefaults());
-
-        return http.build();
-    }*/
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
