@@ -57,8 +57,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     }*/
 
     @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests((authorize) -> authorize
+                        .anyRequest().authenticated()
+                )
+                .httpBasic(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults());
+
+        return http.build();
+    }
+
+    @Bean
     public UserDetailsService userDetailsService() {
-        return new BDDUserDetailsService(); // (1)
+        UserDetails userDetails = User.withDefaultPasswordEncoder()
+                .username("user")
+                .password("password")
+                .roles("USER")
+                .build();
+
+        return new InMemoryUserDetailsManager(userDetails);
     }
 
     @Override
