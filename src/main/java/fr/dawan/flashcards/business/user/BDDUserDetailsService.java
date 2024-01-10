@@ -9,6 +9,7 @@ public class BDDUserDetailsService implements UserDetailsService {
 
     @Override
     public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // TODO Do something here
         return null;
     }
 }

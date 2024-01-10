@@ -48,9 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests((authorize) -> authorize
-                        .anyRequest().authenticated()
-                )
+                .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults());
 
@@ -59,11 +57,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Bean
     public UserDetailsService userDetailsService() {
+        // TODO Remove .withDefault : Depreciated
         UserDetails userDetails = User.withDefaultPasswordEncoder()
                 .username("user")
                 .password("password")
                 .roles("USER")
                 .build();
+
+        // TODO Comprendre ce qui se passe ici
+
+        // UserDetails userD = User.withUserDetails();
+        /**
+         *         return withUsername(userDetails.getUsername()).password(userDetails.getPassword()).accountExpired(!userDetails.isAccountNonExpired()).accountLocked(!userDetails.isAccountNonLocked()).authorities(userDetails.getAuthorities()).credentialsExpired(!userDetails.isCredentialsNonExpired()).disabled(!userDetails.isEnabled());
+         */
 
         return new InMemoryUserDetailsManager(userDetails);
     }
