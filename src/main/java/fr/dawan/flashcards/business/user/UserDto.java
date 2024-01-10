@@ -1,7 +1,6 @@
 package fr.dawan.flashcards.business.user;
 
-import fr.dawan.flashcards.business.passage.Passage;
-import jakarta.persistence.OneToMany;
+import fr.dawan.flashcards.business.passage.PassageDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +14,5 @@ public class UserDto {
     private long id;
     private int version;
     private String name;
-    private List<Passage> tiroir;
+    private List<PassageDto> tiroir;
 }

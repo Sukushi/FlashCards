@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-/*@SpringBootApplication*/
+//@SpringBootApplication
 @Slf4j
 public class RoronoahSansChaussures {
     public static void main(String[] args) {

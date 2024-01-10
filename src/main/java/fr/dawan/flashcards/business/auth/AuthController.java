@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
-    private AuthService service;
+    private final AuthService service;
 
     @PostMapping("register")
-    void register(RegisterDto registerDto) {
+    void register(@RequestBody RegisterDto registerDto) {
         service.register(registerDto);
     }
     @PostMapping("login")

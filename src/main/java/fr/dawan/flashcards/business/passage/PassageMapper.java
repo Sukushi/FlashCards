@@ -1,6 +1,7 @@
 package fr.dawan.flashcards.business.passage;
 
 import fr.dawan.flashcards.business.generic.GenericMapper;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
@@ -11,4 +12,8 @@ public interface PassageMapper extends GenericMapper<Passage, PassageDto> {
     @Mapping(source = "user.id", target = "userId")
     @Mapping(source = "card.id", target = "cardId")
     PassageDto toDto(Passage entity);
+	
+	@Override
+	@InheritInverseConfiguration
+	Passage toEntity(PassageDto dto);
 }

@@ -16,9 +16,4 @@ public class UserController extends GenericController<UserDto, UserService> {
 		super(service);
 	}
 	
-	@GetMapping
-    public Page<UserDto> findAll(Pageable pageable) {
-        return service.findAll(pageable);
-    }
-	
 }

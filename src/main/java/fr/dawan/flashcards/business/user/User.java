@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -47,7 +48,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.stream(role.split(",")).map(SimpleGrantedAuthority::new).toList();
+        return Arrays.stream(Objects.toString(role, "PUBLIC").split(",")).map(SimpleGrantedAuthority::new).toList();
         // Récupérer l'user avec la liste de GrantedAuthority qui correspond au nom du role donnée à l'utilisateur
     }
 

@@ -12,9 +12,9 @@ public class UserServiceBDD extends GenericServiceBDD<User,UserRepository,UserDt
 	public UserServiceBDD(UserRepository repository,UserMapper mapper) {
 		super(repository, mapper);
 	}
+	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		// TODO Ce cast bizarre la
-		return (UserDetails) repository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException(email + "not found."));
+		return repository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException(email + " not found."));
 	}
 }
