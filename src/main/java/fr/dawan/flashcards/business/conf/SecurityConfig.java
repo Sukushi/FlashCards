@@ -40,7 +40,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // route options nécessaires aux POST
 						.requestMatchers("/","/home","/login","/register").permitAll()
-						.anyRequest().authenticated()) //anyRequest : applique la règle sur toutes les routes qui restent
+						.anyRequest().permitAll()) // temporaire pour tester : autorise toutes les routes sans sécurité
+						//.anyRequest().authenticated()) //anyRequest : applique la règle sur toutes les routes qui restent
 				//.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.userDetailsService(userDetailsService)
