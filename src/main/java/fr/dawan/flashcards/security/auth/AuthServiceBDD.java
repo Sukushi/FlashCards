@@ -1,4 +1,4 @@
-package fr.dawan.flashcards.business.auth;
+package fr.dawan.flashcards.security.auth;
 
 import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserMapper;

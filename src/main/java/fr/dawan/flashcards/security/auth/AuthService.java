@@ -1,4 +1,4 @@
-package fr.dawan.flashcards.business.auth;
+package fr.dawan.flashcards.security.auth;
 
 public interface AuthService {
     void register(RegisterDto dto);

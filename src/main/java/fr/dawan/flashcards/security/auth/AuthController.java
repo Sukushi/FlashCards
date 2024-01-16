@@ -1,4 +1,4 @@
-package fr.dawan.flashcards.business.auth;
+package fr.dawan.flashcards.security.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
