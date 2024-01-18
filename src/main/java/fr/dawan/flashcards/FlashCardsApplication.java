@@ -31,8 +31,10 @@ public class FlashCardsApplication implements CommandLineRunner {
 		// Méthode qui s'exécute avant L'application
 		System.out.println("\t>>>>>>>>> Run before App\n");
 
-		if (car)
-		cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+		if (cardRepository.findAll().size() == 0){
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+		}
+
 
 	}
 }
