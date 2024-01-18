@@ -51,30 +51,7 @@ class CardTest {
     @Test
     void getQuestion() {
         assertEquals("Question Témoin",cardTemoin.getQuestion());
-    }
 
-    @Test
-    void getAnswer() {
-
-    }
-
-    @Test
-    void setTitle() {
-    }
-
-    @Test
-    void setCategory() {
-    }
-
-    @Test
-    void setQuestion() {
-    }
-
-    @Test
-    void setAnswer() {
-    }
-
-    @Test
-    void testToString() {
+        // Ces tests m'on permit de pratiquer, ils étaient néanmoins <complètement> inutiles
     }
 }
