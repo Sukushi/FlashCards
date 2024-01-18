@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class PassageDto {
     private long id;
-    private int version;
+    private long version;
     private long cardId;
     private Niveau niveau;
     private LocalDate dateUpdate;

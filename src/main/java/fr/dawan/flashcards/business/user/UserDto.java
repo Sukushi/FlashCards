@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 public class UserDto {
     private long id;
-    private int version;
+    private long version;
     private String name;
     private List<PassageDto> tiroir;
 }
