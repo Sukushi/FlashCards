@@ -11,12 +11,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-//@SpringBootApplication
 @Slf4j
 public class RoronoahSansChaussures {
     public static void main(String[] args) {
-        SpringApplication.run(FlashCardsApplication.class, args);
-
         LocalDate date = LocalDate.now();
         LocalDate old = LocalDate.of(2023,12,8);
         System.out.println("--- dates until ---");
