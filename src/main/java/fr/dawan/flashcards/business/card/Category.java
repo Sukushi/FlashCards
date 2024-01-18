@@ -1,4 +1,4 @@
-package fr.dawan.flashcards.business.entitites;
+package fr.dawan.flashcards.business.card;
 
 import lombok.Getter;
 

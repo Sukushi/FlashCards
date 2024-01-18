@@ -2,7 +2,6 @@ package fr.dawan.flashcards.business.passage;
 
 import fr.dawan.flashcards.business.card.CardDto;
 import fr.dawan.flashcards.business.generic.GenericController;
-import fr.dawan.flashcards.business.entitites.Niveau;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,11 +1,8 @@
 package fr.dawan.flashcards.business.card;
 
-import fr.dawan.flashcards.business.entitites.Niveau;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 public interface CardRepository extends JpaRepository<Card,Long> {
 	// Lister ici toutes les fonctions à implémenter aux cartes

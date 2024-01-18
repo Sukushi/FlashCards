@@ -1,11 +1,9 @@
 package fr.dawan.flashcards;
 
-import fr.dawan.flashcards.business.csv.CSVFlashCard;
-import fr.dawan.flashcards.business.entitites.Niveau;
+import fr.dawan.flashcards.records.csv.CSVFlashCard;
+import fr.dawan.flashcards.business.passage.Niveau;
 import fr.dawan.flashcards.business.user.User;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
 import java.time.LocalDate;

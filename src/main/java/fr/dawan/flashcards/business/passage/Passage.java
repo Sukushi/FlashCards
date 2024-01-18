@@ -3,7 +3,6 @@ package fr.dawan.flashcards.business.passage;
 import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.generic.BaseEntity;
 import fr.dawan.flashcards.business.user.User;
-import fr.dawan.flashcards.business.entitites.Niveau;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.*;

@@ -1,6 +1,5 @@
 package fr.dawan.flashcards.business.card;
 
-import fr.dawan.flashcards.business.entitites.Category;
 import fr.dawan.flashcards.business.generic.GenericMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

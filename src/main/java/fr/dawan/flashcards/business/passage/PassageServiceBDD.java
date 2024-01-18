@@ -1,7 +1,6 @@
 package fr.dawan.flashcards.business.passage;
 
 import fr.dawan.flashcards.business.generic.GenericServiceBDD;
-import fr.dawan.flashcards.business.entitites.Niveau;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

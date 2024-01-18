@@ -1,8 +1,8 @@
-package fr.dawan.flashcards.business.csv;
+package fr.dawan.flashcards.records.csv;
 
 import fr.dawan.flashcards.business.card.Card;
-import fr.dawan.flashcards.business.entitites.Category;
-import fr.dawan.flashcards.business.entitites.Niveau;
+import fr.dawan.flashcards.business.card.Category;
+import fr.dawan.flashcards.business.passage.Niveau;
 import fr.dawan.flashcards.business.passage.Passage;
 import fr.dawan.flashcards.business.user.User;
 
@@ -11,7 +11,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

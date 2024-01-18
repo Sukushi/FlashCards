@@ -1,9 +1,5 @@
 package fr.dawan.flashcards.business.passage;
 
-import fr.dawan.flashcards.business.card.Card;
-import fr.dawan.flashcards.business.entitites.Niveau;
-import fr.dawan.flashcards.business.user.User;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
