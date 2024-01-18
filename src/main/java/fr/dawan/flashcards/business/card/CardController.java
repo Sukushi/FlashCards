@@ -20,7 +20,7 @@ public class CardController extends GenericController<CardDto, CardService> {
 	
 	@GetMapping("/init")
 	public ResponseEntity<String> init() {
-		if (service.findAll(PageRequest.of(0,10)).getSize() != 0) {
+		if (service.findAll(PageRequest.of(0,10)).getTotalElements() == 0) {
 			service.init();
 			return ResponseEntity.status(HttpStatus.OK).body("Les premières cartes ont été ajoutées");
 		}
