@@ -45,6 +45,7 @@ class CardTest {
         String actual = cardTemoin.getCategory().toString();
 
         assertEquals(expected,actual);
+        System.out.printf("\ngetCategory : %s - %s",expected,actual);
     }
 
 
@@ -52,6 +53,6 @@ class CardTest {
     void getQuestion() {
         assertEquals("Question Témoin",cardTemoin.getQuestion());
 
-        // Ces tests m'on permit de pratiquer, ils étaient néanmoins <complètement> inutiles
+        // Ces tests mon permis de pratiquer, ils étaient néanmoins <complètement> inutiles
     }
 }

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Card Controller Test")
-class CardControllerTest {
+class CardControllerTest {/*
 
     @BeforeEach
     void setUp() {
@@ -22,5 +22,5 @@ class CardControllerTest {
 
     @AfterEach
     void tearDown() {
-    }
+    }*/
 }
