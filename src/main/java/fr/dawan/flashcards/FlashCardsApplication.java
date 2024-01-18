@@ -80,7 +80,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("variable-systeme", Category.DEFINITION,"Question Témoin","Réponse Témoin"));
 			cardRepository.save(new Card("variable-environnement", Category.DEFINITION,"Question Témoin","Réponse Témoin"));
 
-
+			cardRepository.save(new Card("framework", Category.DEFINITION, "",""));
 
 			cardRepository.save(new Card("UUID", Category.SIGLE,"Que veut dire ce sigle ?","U U I D"));
 			cardRepository.save(new Card("DTO", Category.SIGLE,"Que veut dire ce sigle ?","U U I D"));
