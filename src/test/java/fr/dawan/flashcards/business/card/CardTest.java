@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.business.card;
 
+import org.jacoco.agent.rt.internal_4a7f17c.IExceptionLogger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,11 +26,27 @@ class CardTest {
     @Test
     void getTitle() {
 
+        // AAA
+        // Arrange
+        // Act
+        // Assert
+
+        String obtenu = cardTemoin.getTitle(); // Act
+        String attendu = "temoin";
+
+        assertEquals(attendu,obtenu);
+        System.out.printf("\ngetTitle : %s - %s",obtenu,attendu);
     }
 
     @Test
     void getCategory() {
+        String expected = "JAVA";
+
+        String actual = cardTemoin.getCategory().toString();
+
+        assertEquals(expected,actual);
     }
+
 
     @Test
     void getQuestion() {
