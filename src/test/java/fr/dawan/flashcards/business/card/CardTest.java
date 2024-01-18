@@ -50,10 +50,12 @@ class CardTest {
 
     @Test
     void getQuestion() {
+        assertEquals("Question Témoin",cardTemoin.getQuestion());
     }
 
     @Test
     void getAnswer() {
+
     }
 
     @Test
