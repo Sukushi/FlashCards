@@ -33,6 +33,28 @@ public class FlashCardsApplication implements CommandLineRunner {
 
 		if (cardRepository.findAll().size() == 0){
 			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("Allouer", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("Service", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
+			cardRepository.save(new Card("temoin", Category.JAVA,"Question Témoin","Réponse Témoin"));
 		}
 
 
