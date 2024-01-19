@@ -37,12 +37,12 @@ public class FlashCardsApplication implements CommandLineRunner {
 
 		//if (cardRepository.findAll().size() == 1){
 			cardRepository.save(new Card("temoin", Category.TEST,"Question Témoin","Réponse Témoin"));
-			cardRepository.save(new Card("allouer", Category.DEFINITION,"Qu'est ce que \"allouer\" signifie ?",""));
-			cardRepository.save(new Card("service", Category.DEFINITION,"Qu'est ce qu'un \"service\" ?",""));
-			cardRepository.save(new Card("abstraction", Category.DEFINITION,"Qu'est ce qu'une \"abstraction\" ?",""));
-			cardRepository.save(new Card("interface", Category.DEFINITION,"Qu'est ce qu'une \"interface\" ?",""));
-			cardRepository.save(new Card("classe", Category.DEFINITION,"Qu'est ce qu'une \"classe\" ?",""));
-			cardRepository.save(new Card("dependance", Category.DEFINITION,"Qu'est ce qu'une \"dépendance\" ?",""));
+			cardRepository.save(new Card("allouer", Category.DEFINITION,"Qu'est ce que \"allouer\" signifie ?","En informatique, l'allocation est le fait d'associer un espace de mémoire à certaines données ou à un programme pour son exécution."));
+			cardRepository.save(new Card("service", Category.DEFINITION,"Qu'est ce qu'un \"service\" ?","En informatique, un service est une fonctionnalité ou partie de fonctionnalité mise à disposition par un composant logiciel pour assurer une tâche particulière. Elle se présente sous forme de boîte noire, présentant uniquement son interface logicielle : nom du service, des fonctions qu'il inclut avec les variables d'entrée requises et sorties produites, et d'éventuelles données complémentaires informatives sur le service | https://fr.wikipedia.org/wiki/Service"));
+			cardRepository.save(new Card("abstraction", Category.DEFINITION,"Qu'est ce qu'une \"abstraction\" ?","Dans le contexte orienté objet, l'abstraction est un mécanisme, ou une pratique, servant à réduire le code d'un niveau de détail. Autrement dit, l'abstraction permet de regrouper un certain nombre de classes selon des caractéristiques communes."));
+			cardRepository.save(new Card("interface", Category.DEFINITION,"Qu'est ce qu'une \"interface\" ?","Une interface définit la frontière de communication entre deux entités. On appelle aussi interfaces des dispositifs fournissant un moyen de traduction entre des entités qui n'utilisent pas le même langage, comme entre un être humain et un ordinateur."));
+			cardRepository.save(new Card("classe", Category.DEFINITION,"Qu'est ce qu'une \"classe\" ?","En programmation orientée objet, la déclaration d'une classe regroupe des membres, méthodes et propriétés (attributs) communs à un ensemble d'objets. La classe déclare, d'une part, des attributs représentant l'état des objets et, d'autre part, des méthodes représentant leur comportement."));
+			cardRepository.save(new Card("dependance", Category.DEFINITION,"Qu'est ce qu'une \"dépendance fonctionnelle\" ?","En théorie des bases de données relationnelles, une dépendance fonctionnelle est une contrainte entre deux ensembles d'attributs dans une relation (table) d'une base de données"));
 			cardRepository.save(new Card("objet", Category.DEFINITION,"Qu'est ce qu'un \"objet\" en programmation ?",""));
 			cardRepository.save(new Card("algorithme", Category.DEFINITION,"Qu'est ce qu'un \"algorithme\" ?",""));
 			cardRepository.save(new Card("heritage", Category.DEFINITION,"Qu'est ce qu'un \"heritage\" ?",""));
@@ -69,6 +69,9 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("repository", Category.DEFINITION,"Qu'est ce qu'un \"repository\" ?",""));
 			cardRepository.save(new Card("audit", Category.DEFINITION,"Qu'est ce qu'un \"audit\" ?",""));
 			cardRepository.save(new Card("entitee", Category.DEFINITION,"Qu'est ce qu'une \"entité\" ?",""));
+			cardRepository.save(new Card("injection-dependance", Category.DEFINITION,"Qu'est ce qu'une \"injection de dépendances\" ?","L'injection de dépendances {dependency (of) injection en anglais} est un mécanisme qui permet d'implémenter le principe de l'inversion de contrôle"));
+			cardRepository.save(new Card("inversion-controle", Category.DEFINITION,"Qu'est ce qu'une \"entité\" ?","L’inversion de contrôle (inversion of control, IoC) est un patron d'architecture commun à tous les frameworks (ou cadre de développement et d'exécution). Il fonctionne selon le principe que le flot d'exécution d'un logiciel n'est plus sous le contrôle direct de l'application elle-même mais du framework ou de la couche logicielle sous-jacente."));
+			cardRepository.save(new Card("inversion-dependances", Category.DEFINITION,"Qu'est ce qu'une \"inversion des dépendances\" ?","En programmation orientée objet, le principe d'inversion des dépendances (dependency inversion principle) fait référence à une forme spécifique de découplage des modules logiciels1. Il correspond au « D » de l'acronyme SOLID."));
 
 			cardRepository.save(new Card("cahier-des-charges", Category.DEFINITION,"Qu'est ce qu'un \"cahier des charges\" ?",""));
 			cardRepository.save(new Card("plugin", Category.DEFINITION,"Qu'est ce qu'un \"plugin\" ?",""));
@@ -96,6 +99,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?",""));
 			cardRepository.save(new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?",""));
 			cardRepository.save(new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?",""));
+			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?",""));
 			//cardRepository.save(new Card("MOT", Category.SIGLE,"Que veut dire le sigle : MOT ?",""));
 
 			cardRepository.save(new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""));
