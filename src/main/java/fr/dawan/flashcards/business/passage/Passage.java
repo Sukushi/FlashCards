@@ -32,4 +32,7 @@ public class Passage extends BaseEntity {
     public boolean isDaily() {
         return LocalDate.now().compareTo(dateUpdate) >= niveau.getDuree();
     }
+    public Passage setToday(){
+        return this.setDateUpdate(LocalDate.now());
+    }
 }

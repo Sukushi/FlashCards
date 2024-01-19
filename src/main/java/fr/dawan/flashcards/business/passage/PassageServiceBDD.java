@@ -43,20 +43,17 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		if (nextNiveau < Niveau.values().length){
 			passage.setNiveau(Niveau.values()[nextNiveau]);
 		}
-		setToday(passage);
+		passage.setToday();
 		repository.save(passage);
 	}
 
 	@Override
 	public void resetNiveau(long passageId) {
 		Passage passage = repository.findById(passageId).get();
-		passage.setNiveau(Niveau.NIVEAU1);
-		setToday(passage);
+		passage.setNiveau(Niveau.NIVEAU1).setToday();
 		repository.save(passage);
 	}
 
-	private Passage setToday(Passage passage){
-        return passage.setDateUpdate(LocalDate.now());
-    }
+	// TODO : Améliorer encore près compréhension et assimilation de ci dessus
 
 }
