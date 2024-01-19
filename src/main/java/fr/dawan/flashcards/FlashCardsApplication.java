@@ -3,9 +3,10 @@ package fr.dawan.flashcards;
 import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.card.CardRepository;
 import fr.dawan.flashcards.business.card.Category;
+import fr.dawan.flashcards.business.passage.Passage;
 import fr.dawan.flashcards.business.passage.PassageRepository;
+import fr.dawan.flashcards.business.passage.PassageServiceBDD;
 import fr.dawan.flashcards.business.user.Role;
-import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserRepository;
 import fr.dawan.flashcards.security.auth.AuthServiceBDD;
 import fr.dawan.flashcards.security.auth.RegisterDto;
@@ -13,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 
 @SpringBootApplication
@@ -26,6 +30,8 @@ public class FlashCardsApplication implements CommandLineRunner {
 	PassageRepository passageRepository;
 	@Autowired
 	AuthServiceBDD authService;
+	@Autowired
+	PassageServiceBDD passageService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
@@ -140,6 +146,20 @@ public class FlashCardsApplication implements CommandLineRunner {
 			authService.register(new RegisterDto("florian","floflo","florian.d@gmail.com", Role.USER));
 			authService.register(new RegisterDto("chayanne","chayou","chayanne.p@gmail.com", Role.USER));
 			authService.register(new RegisterDto("titouan","titou","titouan.m@gmail.com", Role.USER));
+		}
+		
+		List<Passage> passages = passageRepository.findByUserId(1, Pageable.ofSize(10)).toList();
+		if (passages.isEmpty()) {
+		
+		}
+		try {
+			passageService.insertPassage(1,3);
+			passageService.insertPassage(2,5);
+			passageService.insertPassage(250,3);
+			passageService.insertPassage(2,250);
+			passageService.insertPassage(250,250);
+		} catch (Exception e) {
+			// ignorer
 		}
 	}
 }
