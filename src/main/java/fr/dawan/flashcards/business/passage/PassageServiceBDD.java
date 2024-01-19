@@ -12,9 +12,6 @@ import java.time.LocalDate;
 @Service
 public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageRepository,PassageDto,PassageMapper> implements PassageService {
 	
-	@Autowired
-	UserRepository userRepository;
-	
 	public PassageServiceBDD(PassageRepository repository, PassageMapper mapper) {
 		super(repository, mapper);
 	}
@@ -33,7 +30,21 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 	public void insertPassage(long userId, long cardId) {
 		PassageDto dto = new PassageDto(0, 0, cardId, Niveau.NIVEAU1, LocalDate.now(), userId);
 		Passage entity = mapper.toEntity(dto);
-		System.out.println(entity);
 		repository.save(entity);
+	}
+
+	@Override
+	public void upNiveau(long passageId) {
+
+	}
+
+	@Override
+	public void resetNiveau(long passageId) {
+
+	}
+
+	@Override
+	public void setToday(long passageId) {
+
 	}
 }
