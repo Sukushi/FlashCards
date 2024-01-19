@@ -22,7 +22,7 @@ public class AuthServiceBDD implements AuthService {
     @Override
     public void register(RegisterDto dto) {
         String encodedPassword = encoder.encode(dto.getPassword());
-        User newUser = new User(dto.getUsername(),encodedPassword,dto.getEmail());
+        User newUser = new User(dto.getUsername(),encodedPassword,dto.getEmail(),dto.getRole());
         repository.save(newUser);
     }
 

@@ -4,7 +4,11 @@ import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.card.CardRepository;
 import fr.dawan.flashcards.business.card.Category;
 import fr.dawan.flashcards.business.passage.PassageRepository;
+import fr.dawan.flashcards.business.user.Role;
+import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserRepository;
+import fr.dawan.flashcards.security.auth.AuthServiceBDD;
+import fr.dawan.flashcards.security.auth.RegisterDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +24,9 @@ public class FlashCardsApplication implements CommandLineRunner {
 	UserRepository userRepository;
 	@Autowired
 	PassageRepository passageRepository;
+	@Autowired
+	AuthServiceBDD authService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
 		// SpringApplication.run(JoeLaBidouille.class, args);
@@ -35,7 +42,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 		cardRepository.save(new Card("", Category.TEST, "",""));
 		 */
 
-		//if (cardRepository.findAll().size() == 1){
+		if (cardRepository.findAll().isEmpty()){
 			cardRepository.save(new Card("temoin", Category.TEST,"Question Témoin","Réponse Témoin"));
 			cardRepository.save(new Card("allouer", Category.DEFINITION,"Qu'est ce que \"allouer\" signifie ?",""));
 			cardRepository.save(new Card("service", Category.DEFINITION,"Qu'est ce qu'un \"service\" ?",""));
@@ -124,12 +131,18 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("React", Category.FRAMEWORK,"Quels sont les particularités de ce framework : React",""));
 			cardRepository.save(new Card("Spring", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Spring",""));
 			cardRepository.save(new Card("Symfony", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Symfony",""));
+		}
 
-
-		//}
-
-
+		if (userRepository.findAll().isEmpty()) {
+			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com", Role.ADMIN));
+			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com", Role.ADMIN));
+			authService.register(new RegisterDto("yanis","yanou","yanis.a@gmail.com", Role.MODO));
+			authService.register(new RegisterDto("florian","floflo","florian.d@gmail.com", Role.USER));
+			authService.register(new RegisterDto("chayanne","chayou","chayanne.p@gmail.com", Role.USER));
+			authService.register(new RegisterDto("titouan","titou","titouan.m@gmail.com", Role.USER));
+		}
 	}
 }
 
+// --spring.profiles.active=dev
 // --spring.profiles.active=test

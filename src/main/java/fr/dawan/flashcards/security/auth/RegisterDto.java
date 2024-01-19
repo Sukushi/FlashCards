@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.security.auth;
 
+import fr.dawan.flashcards.business.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegisterDto {
     private String username;
-    private String email;
-    private String password;
-
+	private String password;
+	private String email;
+	private Role role = Role.USER;
 }
