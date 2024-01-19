@@ -11,3 +11,6 @@ public enum Category {
     ARCHITECTURE,EXTENSION,
     FRAMEWORK
 }
+/*
+Later Update ? : Switch from a Category/card --> List<Category> /card
+ */

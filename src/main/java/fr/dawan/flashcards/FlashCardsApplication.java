@@ -106,13 +106,13 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("DTO", Category.SIGLE,"Que veut dire le sigle : DTO ?",""));
 			cardRepository.save(new Card("SCRUM", Category.SIGLE,"Que veut dire le sigle : SCRUM ?",""));
 			cardRepository.save(new Card("DAO", Category.SIGLE,"Que veut dire le sigle : DAO ?",""));
-			cardRepository.save(new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?",""));
-			cardRepository.save(new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?",""));
-			cardRepository.save(new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?",""));
-			cardRepository.save(new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?",""));
-			cardRepository.save(new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?",""));
-			cardRepository.save(new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?",""));
-			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?",""));
+			cardRepository.save(new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?","Java "));
+			cardRepository.save(new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?","GroupId ArtifactId Version : "));
+			cardRepository.save(new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?","Java Virtual Machine"));
+			cardRepository.save(new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?","Programmation Orientée Objet"));
+			cardRepository.save(new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?","Diagramme de Cas d'Utilisation "));
+			cardRepository.save(new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?","Diagramme de Classe"));
+			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?","Dynamic Link Library"));
 			//cardRepository.save(new Card("MOT", Category.SIGLE,"Que veut dire le sigle : MOT ?",""));
 
 			cardRepository.save(new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""));
