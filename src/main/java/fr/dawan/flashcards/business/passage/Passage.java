@@ -25,8 +25,11 @@ public class Passage extends BaseEntity {
     @ManyToOne
     private User user;
 
+    /*
+    On va pouvoir retrouver la date de création du passage via la BDD
+     */
+
     public boolean isDaily() {
         return LocalDate.now().compareTo(dateUpdate) >= niveau.getDuree();
     }
-
 }

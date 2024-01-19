@@ -12,11 +12,6 @@ public interface PassageService extends GenericService<PassageDto> {
 	
 	void insertPassage(long userId, long cardId);
 
-	// Besoin ? : Mettre à jour le niveau d'UN passage
-	// 1 : +1 niveau
-	// 2 : reset niveau
 	void upNiveau(long passageId);
 	void resetNiveau(long passageId);
-	// Besoin ? : Mettre à jour la date à la date d'aujourd'hui
-	void setToday(long passageId);
 }
