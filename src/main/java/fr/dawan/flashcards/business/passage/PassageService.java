@@ -9,4 +9,9 @@ public interface PassageService extends GenericService<PassageDto> {
 	Page<PassageDto> findByNiveauAndUserId(Niveau niveau, long userId, Pageable pageable);
 	
 	Page<PassageDto> findByUserId(long userId, Pageable pageable);
+	
+	void insertPassage(long userId, long cardId);
+
+	void upNiveau(long passageId);
+	void resetNiveau(long passageId);
 }

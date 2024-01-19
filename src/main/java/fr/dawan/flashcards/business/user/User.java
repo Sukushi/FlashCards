@@ -30,7 +30,7 @@ public class User extends BaseEntity implements UserDetails {
 	@ToString.Exclude
 	private List<Passage> tiroir;
     private String email;
-    private String role;
+    private Role role;
 
     public User(String name, String password, String email) {
         this.name = name;
@@ -39,12 +39,12 @@ public class User extends BaseEntity implements UserDetails {
     }
 
     // TODO Need this car pas d'attribution de roles à la création d'un User ?
-    public User(String name, String password, List<Passage> tiroir, String email) {
+    public User(String name, String password, String email, Role role) {
         this.name = name;
         this.password = password;
-        this.tiroir = tiroir;
         this.email = email;
-    }
+		this.role = role;
+	}
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

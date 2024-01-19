@@ -21,6 +21,11 @@ public class CardServiceBDD extends GenericServiceBDD<Card,CardRepository,CardDt
     public Page<CardDto> findById(long id, Pageable pageable) {
         return repository.findById(id, pageable).map(mapper::toDto);
     }
+	
+	// méthode pour le mapping
+	public Card getById(long cardId) {
+		return repository.findById(cardId).get();
+	}
 
     @Override
     public Page<CardDto> findByTitle(String title, Pageable pageable) {

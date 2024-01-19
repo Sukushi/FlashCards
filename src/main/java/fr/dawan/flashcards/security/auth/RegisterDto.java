@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegisterDto {
     private String username;
-    private String email;
-    private String password;
+	private String password;
+	private String email;
+	private Role role = Role.USER;
 }
