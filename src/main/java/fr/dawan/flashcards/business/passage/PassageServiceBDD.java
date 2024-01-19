@@ -37,18 +37,22 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 
 	@Override
 	public void upNiveau(long passageId) {
+		Passage passage = repository.findById(passageId).get();
 		// Prochain Niveau // Contrôler que ce n'est pas le dernier niveau :
-		int niveauActuel = repository.findById(passageId).get().getNiveau().ordinal();
-		if (niveauActuel+1 < Niveau.values().length){
-			Niveau niveauSouhaite = Niveau.values()[repository.findById(passageId).get().getNiveau().ordinal()+1];
-			repository.findById(passageId).get().setNiveau(niveauSouhaite);
+		int nextNiveau = passage.getNiveau().ordinal() + 1;
+		if (nextNiveau < Niveau.values().length){
+			passage.setNiveau(Niveau.values()[nextNiveau]);
 		}
+		setToday(passage);
+		repository.save(passage);
 	}
 
 	@Override
 	public void resetNiveau(long passageId) {
-		repository.findById(passageId).get()
-				.setNiveau(Niveau.NIVEAU1);
+		Passage passage = repository.findById(passageId).get();
+		passage.setNiveau(Niveau.NIVEAU1);
+		setToday(passage);
+		repository.save(passage);
 	}
 
 	private Passage setToday(Passage passage){
