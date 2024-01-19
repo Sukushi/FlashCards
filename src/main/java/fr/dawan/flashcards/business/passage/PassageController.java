@@ -21,8 +21,11 @@ public class PassageController extends GenericController<PassageDto, PassageServ
 	
 	@GetMapping("/niveau/{niveau}/{userId}")
     // localhost:8080/passages/niveau/NIVEAU2/1
-    public Page<CardDto> findByNiveauAndUserId(@PathVariable String niveau, @PathVariable long userId, Pageable pageable) {
-        return null; //service.findByNiveauAndUserId(Niveau.valueOf(niveau),userId, pageable).map(Passage::getCard);
+	/**
+	 * Récupère toutes les cartes d'un utilisateur pour un niveau spécifique
+	 */
+    public Page<PassageDto> findByNiveauAndUserId(@PathVariable String niveau, @PathVariable long userId, Pageable pageable) {
+        return service.findByNiveauAndUserId(Niveau.valueOf(niveau),userId, pageable);
     }
 	
 	@GetMapping("user/{userId}")
