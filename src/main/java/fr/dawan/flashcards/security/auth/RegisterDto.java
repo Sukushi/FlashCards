@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.security.auth;
 
+import fr.dawan.flashcards.business.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
