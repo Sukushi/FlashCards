@@ -12,12 +12,12 @@ public abstract class GenericServiceMapper<E extends BaseEntity, R extends JpaRe
 	protected final R repository;
 	
 	// méthode pour le mapping
-	public E getMapping(long userId) throws Exception {
-		Optional<E> entity = repository.findById(userId);
+	public E getEntity(long id) throws Exception {
+		Optional<E> entity = repository.findById(id);
 		if (entity.isPresent()) {
 			return entity.get();
 		}
-		throw new Exception();
+		throw new Exception("Impossible de récupérer l'entité");
 	}
 	
 }
