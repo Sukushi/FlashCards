@@ -14,6 +14,9 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class GenericControllerTest {
+    /*
+    Tester les controllers ? == Obligatoirement un test d'intégration ??
+     */
     private CardService service = mock(CardService.class);
 
     private GenericController controller;

@@ -102,17 +102,18 @@ public class FlashCardsApplication implements CommandLineRunner {
 			
 
 
-			cardRepository.save(new Card("UUID", Category.SIGLE,"Que veut dire le sigle : UUID ?",""));
-			cardRepository.save(new Card("DTO", Category.SIGLE,"Que veut dire le sigle : DTO ?",""));
+			cardRepository.save(new Card("UUID", Category.SIGLE,"Que veut dire le sigle : UUID ?","User Unique IDentifier ?"));
+			cardRepository.save(new Card("DTO", Category.SIGLE,"Que veut dire le sigle : DTO ?","Data Transfer Object"));
 			cardRepository.save(new Card("SCRUM", Category.SIGLE,"Que veut dire le sigle : SCRUM ?",""));
-			cardRepository.save(new Card("DAO", Category.SIGLE,"Que veut dire le sigle : DAO ?",""));
-			cardRepository.save(new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?",""));
-			cardRepository.save(new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?",""));
-			cardRepository.save(new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?",""));
-			cardRepository.save(new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?",""));
-			cardRepository.save(new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?",""));
-			cardRepository.save(new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?",""));
-			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?",""));
+			cardRepository.save(new Card("DAO", Category.SIGLE,"Que veut dire le sigle : DAO ?","Data Access Object"));
+			cardRepository.save(new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?","Java Persistence Application ?"));
+			cardRepository.save(new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?","Group ID, Artifact ID et Version. Pré-requis du POM.xml : nécessaire à une architecture Maven"));
+			cardRepository.save(new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?","Java Virtual-Machine"));
+			cardRepository.save(new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?","Programmation Orientée Objet"));
+			cardRepository.save(new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?","Diagramme de Cas d'Utilisation"));
+			cardRepository.save(new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?","Diagramme de Classes"));
+			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?","D Link Library"));
+			cardRepository.save(new Card("API REST", Category.SIGLE,"Que veut dire le sigle : API REST ?","API REpresentational State Transfer : Style d'architecture logicielle définissant un ensemble de contraintes à utiliser pour créer des services web"));
 			//cardRepository.save(new Card("MOT", Category.SIGLE,"Que veut dire le sigle : MOT ?",""));
 
 			cardRepository.save(new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""));
