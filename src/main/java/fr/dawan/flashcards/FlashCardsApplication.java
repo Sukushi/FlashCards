@@ -94,7 +94,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("variable-systeme", Category.DEFINITION,"Qu'est ce qu'une \"variable système\" ?",""));
 			cardRepository.save(new Card("variable-environnement", Category.DEFINITION,"Qu'est ce qu'une \"variable d'environnement\" ?",""));
 	
-			cardRepository.save(new Card("framework", Category.DEFINITION, "Qu'est ce qu'un \"framework\" ?",""));
+			cardRepository.save(new Card("framework", Category.DEFINITION, "Qu'est ce qu'un \"framework\" ?","En Informatique, un framework {cadre de travail} est un ensemble cohérent de composants logiciels structurels qui sert à créer les fondations ainsi que les grandes lignes de tout ou partie d'un logiciel, c'est-à-dire une architecture."));
 			
 			cardRepository.save(new Card("back-end", Category.ARCHITECTURE,"Qu'est ce que le terme \"back-end\" signifie ?",""));
 			cardRepository.save(new Card("front-end", Category.ARCHITECTURE,"Qu'est ce que le terme \"front-end\" signifie ?",""));
@@ -102,27 +102,28 @@ public class FlashCardsApplication implements CommandLineRunner {
 			
 
 
-			cardRepository.save(new Card("UUID", Category.SIGLE,"Que veut dire le sigle : UUID ?","User Unique IDentifier ?"));
+			cardRepository.save(new Card("UUID", Category.SIGLE,"Que veut dire le sigle : UUID ?","Universally Unique IDentifier ?"));
 			cardRepository.save(new Card("DTO", Category.SIGLE,"Que veut dire le sigle : DTO ?","Data Transfer Object"));
-			cardRepository.save(new Card("SCRUM", Category.SIGLE,"Que veut dire le sigle : SCRUM ?",""));
+			cardRepository.save(new Card("SCRUM", Category.SIGLE,"A quoi correspond le sigle : SCRUM ?","Méthodologie Agile de développement de logiciels : Scrum est considéré comme un groupe de pratiques répondant pour la plupart aux préconisations du manifeste agile.  <mêlée du rugby> "));
 			cardRepository.save(new Card("DAO", Category.SIGLE,"Que veut dire le sigle : DAO ?","Data Access Object"));
-			cardRepository.save(new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?","Java Persistence Application ?"));
+			cardRepository.save(new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?","Java Persistence API ?"));
 			cardRepository.save(new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?","Group ID, Artifact ID et Version. Pré-requis du POM.xml : nécessaire à une architecture Maven"));
 			cardRepository.save(new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?","Java Virtual-Machine"));
 			cardRepository.save(new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?","Programmation Orientée Objet"));
 			cardRepository.save(new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?","Diagramme de Cas d'Utilisation"));
 			cardRepository.save(new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?","Diagramme de Classes"));
-			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?","D Link Library"));
-			cardRepository.save(new Card("API REST", Category.SIGLE,"Que veut dire le sigle : API REST ?","API REpresentational State Transfer : Style d'architecture logicielle définissant un ensemble de contraintes à utiliser pour créer des services web"));
+			cardRepository.save(new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?","Dynamic Link Library"));
+			cardRepository.save(new Card("ORM", Category.SIGLE,"Que veut dire le sigle : ORM ?","Object-Relational Mapping : type de programme informatique qui se place en interface entre un programme applicatif et une base de données relationnelle pour simuler une base de données orientée objet."));
+			cardRepository.save(new Card("API_REST", Category.SIGLE,"Que veut dire le sigle : API REST ?","API REpresentational State Transfer : Style d'architecture logicielle définissant un ensemble de contraintes à utiliser pour créer des services web"));
 			//cardRepository.save(new Card("MOT", Category.SIGLE,"Que veut dire le sigle : MOT ?",""));
 
 			cardRepository.save(new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""));
 			cardRepository.save(new Card("XML", Category.EXTENSION,"A quoi correspond cette extension : XML",""));
-			cardRepository.save(new Card("TXT", Category.EXTENSION,"A quoi correspond cette extension : TXT",""));
-			cardRepository.save(new Card("SQL", Category.EXTENSION,"A quoi correspond cette extension : SQL",""));
-			cardRepository.save(new Card("CSV", Category.EXTENSION,"A quoi correspond cette extension : CSV",""));
-			cardRepository.save(new Card("WAR", Category.EXTENSION,"A quoi correspond cette extension : WAR",""));
-			cardRepository.save(new Card("JAR", Category.EXTENSION,"A quoi correspond cette extension : JAR",""));
+			cardRepository.save(new Card("TXT", Category.EXTENSION,"A quoi correspond cette extension : TXT","Texte : MIME Type : text/plain"));
+			cardRepository.save(new Card("SQL", Category.EXTENSION,"A quoi correspond cette extension : SQL","Structured Query Language"));
+			cardRepository.save(new Card("CSV", Category.EXTENSION,"A quoi correspond cette extension : CSV","Comma Separated Value"));
+			cardRepository.save(new Card("WAR", Category.EXTENSION,"A quoi correspond cette extension : WAR","Web ARchive"));
+			cardRepository.save(new Card("JAR", Category.EXTENSION,"A quoi correspond cette extension : JAR","Java ARchive"));
 
 			cardRepository.save(new Card("trello", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Trello",""));
 			cardRepository.save(new Card("jacoco", Category.SOFTWARE,"Quel est la fonction de ce logiciel : JaCoCo",""));
@@ -134,6 +135,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("sonarlint", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Sonarlint",""));
 			cardRepository.save(new Card("sonarqube", Category.SOFTWARE,"Quel est la fonction de ce logiciel : SonarQube",""));
 			cardRepository.save(new Card("postman", Category.SOFTWARE,"Quel est la fonction de ce logiciel : POST Man",""));
+			cardRepository.save(new Card("hibernate", Category.SOFTWARE,"Qu'est-ce que le logiciel Hibernate ?","Hibernate est un framework open source gérant la persistance des objets en base de données relationnelle. C'est un ORM développé par Red Hat. V1 23 mai 2011."));
 
 			cardRepository.save(new Card("Java", Category.LANGAGE,"Citez moi trois particularités de ce langage : Java",""));
 			cardRepository.save(new Card("Javascript", Category.LANGAGE,"Citez moi trois particularités de ce langage : Javascript",""));
