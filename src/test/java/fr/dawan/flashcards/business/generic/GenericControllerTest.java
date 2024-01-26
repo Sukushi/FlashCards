@@ -26,7 +26,8 @@ class GenericControllerTest {
 
     @BeforeEach
     void setUp() {
-        controller = mock(GenericController.class, withSettings().useConstructor(/* D ou DTO ? */,service).defaultAnswer(CALLS_REAL_METHODS));
+        // TODO
+       // controller = mock(GenericController.class, withSettings().useConstructor(/* D ou DTO ? */,service).defaultAnswer(CALLS_REAL_METHODS));
     }
 
     @AfterEach
