@@ -18,9 +18,26 @@ import java.time.LocalDate;
 @Accessors(chain = true)
 public class Passage extends BaseEntity {
 
+    // TODO Romain
+
+    /**
+     * On est d'accord pour dire que Passage, à l'heure actuelle, est la table de jointure entre Card et User ?
+     *
+     * On est dans une relation 1 ou plusieurs passages correspond(ent) à Uniquement 1 User et à uniquement 1 Card
+     *
+     * Star UML : Diagramme de classe
+     * Partie Associations/Relations (les revoir)
+     *
+     * Faire le DC de Flashcards
+     *
+     */
+
     @ManyToOne
     private Card card;
     private Niveau niveau;
+
+    // Annotation ?? Embedded ?
+    // TODO Initialiser dans le constructeur / les constructeurs
     private LocalDate dateUpdate;
     @ManyToOne
     private User user;

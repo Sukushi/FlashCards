@@ -28,7 +28,7 @@ public class User extends BaseEntity implements UserDetails {
     private String password; // spring security à implémenter
     @OneToMany(mappedBy = "user")
 	@ToString.Exclude
-	private List<Passage> tiroir;
+	private List<Passage> tiroir; // Kesako ? : Bibliothèque perso == Tiroir
     private String email;
     private Role role;
 
