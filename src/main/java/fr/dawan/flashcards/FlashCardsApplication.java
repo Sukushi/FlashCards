@@ -156,9 +156,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 		}
 		
 		List<Passage> passages = passageRepository.findByUserId(1, Pageable.ofSize(10)).toList();
-		if (passages.isEmpty()) {
-		
-		}
+		System.out.println(passages);
 		try {
 			passageService.insertPassage(1,3);
 			passageService.insertPassage(2,5);
