@@ -30,6 +30,7 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 	
 	@Override
 	public void insertPassage(long userId, long cardId) {
+		// TODO Genre ici tu peux me dire ce que tu fait et pourquoi tu le fait, et pourquoi tu le fait ici ?
 		PassageDto dto = new PassageDto(0, 0, cardId, Niveau.NIVEAU1, LocalDate.now(), userId);
 		Passage entity = mapper.toEntity(dto);
 		repository.save(entity);
@@ -54,6 +55,6 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		repository.save(passage);
 	}
 
-	// TODO : Améliorer encore près compréhension et assimilation de ci dessus
+	// TODO : Améliorer encore la compréhension et l'assimilation de ci-dessus
 
 }

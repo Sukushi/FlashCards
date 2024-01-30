@@ -100,47 +100,49 @@ public class FlashCardsApplication implements CommandLineRunner {
 					new Card("back-end", Category.ARCHITECTURE,"Qu'est ce que le terme \"back-end\" signifie ?",""),
 					new Card("front-end", Category.ARCHITECTURE,"Qu'est ce que le terme \"front-end\" signifie ?",""),
 					new Card("full-stack", Category.ARCHITECTURE,"Qu'est ce que le terme \"full-stack\" signifie ?",""),
-			
-			//		new Card("MOT", Category.SIGLE,"Que veut dire le sigle : MOT ?",""),
-					new Card("UUID", Category.SIGLE,"Que veut dire le sigle : UUID ?",""),
-					new Card("DTO", Category.SIGLE,"Que veut dire le sigle : DTO ?",""),
-					new Card("SCRUM", Category.SIGLE,"Que veut dire le sigle : SCRUM ?",""),
-					new Card("DAO", Category.SIGLE,"Que veut dire le sigle : DAO ?",""),
-					new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?","Java "),
-					new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?","GroupId ArtifactId Version : "),
-					new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?","Java Virtual Machine"),
-					new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?","Programmation Orientée Objet"),
-					new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?","Diagramme de Cas d'Utilisation "),
-					new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?","Diagramme de Classe"),
-					new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?","Dynamic Link Library"),
 
-					new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""),
-					new Card("XML", Category.EXTENSION,"A quoi correspond cette extension : XML",""),
-					new Card("TXT", Category.EXTENSION,"A quoi correspond cette extension : TXT",""),
-					new Card("SQL", Category.EXTENSION,"A quoi correspond cette extension : SQL",""),
-					new Card("CSV", Category.EXTENSION,"A quoi correspond cette extension : CSV",""),
-					new Card("WAR", Category.EXTENSION,"A quoi correspond cette extension : WAR",""),
-					new Card("JAR", Category.EXTENSION,"A quoi correspond cette extension : JAR",""),
+			new Card("UUID", Category.SIGLE,"Que veut dire le sigle : UUID ?","Universally Unique IDentifier ?"),
+			new Card("DTO", Category.SIGLE,"Que veut dire le sigle : DTO ?","Data Transfer Object"),
+			new Card("SCRUM", Category.SIGLE,"A quoi correspond le sigle : SCRUM ?","Méthodologie Agile de développement de logiciels : Scrum est considéré comme un groupe de pratiques répondant pour la plupart aux préconisations du manifeste agile.  <mêlée du rugby> "),
+			new Card("DAO", Category.SIGLE,"Que veut dire le sigle : DAO ?","Data Access Object"),
+			new Card("JPA", Category.SIGLE,"Que veut dire le sigle : JPA ?","Java Persistence API ?"),
+			new Card("GAV", Category.SIGLE,"Que veut dire le sigle : GAV ?","Group ID, Artifact ID et Version. Pré-requis du POM.xml : nécessaire à une architecture Maven"),
+			new Card("JVM", Category.SIGLE,"Que veut dire le sigle : JVM ?","Java Virtual-Machine"),
+			new Card("POO", Category.SIGLE,"Que veut dire le sigle : POO ?","Programmation Orientée Objet"),
+			new Card("DCU", Category.SIGLE,"Que veut dire le sigle : DCU ?","Diagramme de Cas d'Utilisation"),
+			new Card("DC", Category.SIGLE,"Que veut dire le sigle : DC ?","Diagramme de Classes"),
+			new Card("DLL", Category.SIGLE,"Que veut dire le sigle : DLL ?","Dynamic Link Library"),
+			new Card("ORM", Category.SIGLE,"Que veut dire le sigle : ORM ?","Object-Relational Mapping : type de programme informatique qui se place en interface entre un programme applicatif et une base de données relationnelle pour simuler une base de données orientée objet."),
+			new Card("API_REST", Category.SIGLE,"Que veut dire le sigle : API REST ?","API REpresentational State Transfer : Style d'architecture logicielle définissant un ensemble de contraintes à utiliser pour créer des services web"),
+			//new Card("MOT", Category.SIGLE,"Que veut dire le sigle : MOT ?",""),
 
-					new Card("trello", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Trello",""),
-					new Card("jacoco", Category.SOFTWARE,"Quel est la fonction de ce logiciel : JaCoCo",""),
-					new Card("surefire", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Surefire",""),
-					new Card("maven", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Maven",""),
-					new Card("eclipse", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Eclipse",""),
-					new Card("intellij", Category.SOFTWARE,"Quel est la fonction de ce logiciel : IntelliJ",""),
-					new Card("jenkins", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Jenkins",""),
-					new Card("sonarlint", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Sonarlint",""),
-					new Card("sonarqube", Category.SOFTWARE,"Quel est la fonction de ce logiciel : SonarQube",""),
-					new Card("postman", Category.SOFTWARE,"Quel est la fonction de ce logiciel : POST Man",""),
+			new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""),
+			new Card("XML", Category.EXTENSION,"A quoi correspond cette extension : XML",""),
+			new Card("TXT", Category.EXTENSION,"A quoi correspond cette extension : TXT",""),
+			new Card("SQL", Category.EXTENSION,"A quoi correspond cette extension : SQL",""),
+			new Card("CSV", Category.EXTENSION,"A quoi correspond cette extension : CSV",""),
+			new Card("WAR", Category.EXTENSION,"A quoi correspond cette extension : WAR",""),
+			new Card("JAR", Category.EXTENSION,"A quoi correspond cette extension : JAR",""),
 
-					new Card("Java", Category.LANGAGE,"Citez moi trois particularités de ce langage : Java",""),
-					new Card("Javascript", Category.LANGAGE,"Citez moi trois particularités de ce langage : Javascript",""),
+			new Card("trello", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Trello",""),
+			new Card("jacoco", Category.SOFTWARE,"Quel est la fonction de ce logiciel : JaCoCo",""),
+			new Card("surefire", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Surefire",""),
+			new Card("maven", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Maven",""),
+			new Card("eclipse", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Eclipse",""),
+			new Card("intellij", Category.SOFTWARE,"Quel est la fonction de ce logiciel : IntelliJ",""),
+			new Card("jenkins", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Jenkins",""),
+			new Card("sonarlint", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Sonarlint",""),
+			new Card("sonarqube", Category.SOFTWARE,"Quel est la fonction de ce logiciel : SonarQube",""),
+			new Card("postman", Category.SOFTWARE,"Quel est la fonction de ce logiciel : POST Man",""),
+            new Card("hibernate", Category.SOFTWARE,"Qu'est-ce que le logiciel Hibernate ?","Hibernate est un framework open source gérant la persistance des objets en base de données relationnelle. C'est un ORM développé par Red Hat. V1 23 mai 2011."),
 
-					new Card("Angular", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Angular",""),
-					new Card("React", Category.FRAMEWORK,"Quels sont les particularités de ce framework : React",""),
-					new Card("Spring", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Spring",""),
-					new Card("Symfony", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Symfony","")
-			));
+			new Card("Java", Category.LANGAGE,"Citez moi trois particularités de ce langage : Java",""),
+			new Card("Javascript", Category.LANGAGE,"Citez moi trois particularités de ce langage : Javascript",""),
+
+			new Card("Angular", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Angular",""),
+			new Card("React", Category.FRAMEWORK,"Quels sont les particularités de ce framework : React",""),
+			new Card("Spring", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Spring",""),
+			new Card("Symfony", Category.FRAMEWORK,"Quels sont les particularités de ce framework : Symfony","")));
 		}
 
 		if (userRepository.findAll().isEmpty()) {
@@ -153,9 +155,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 		}
 		
 		List<Passage> passages = passageRepository.findByUserId(1, Pageable.ofSize(10)).toList();
-		if (passages.isEmpty()) {
-		
-		}
+		System.out.println(passages);
 		try {
 			passageService.insertPassage(1,3);
 			passageService.insertPassage(2,5);
