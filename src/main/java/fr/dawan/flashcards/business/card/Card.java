@@ -19,7 +19,8 @@ public class Card extends BaseEntity {
     private String title;
     private Category category;
     private String question;
-    @Column(length = 65535,columnDefinition="Text")
+
+    @Column(columnDefinition="Text")
     private String answer;
 
 }

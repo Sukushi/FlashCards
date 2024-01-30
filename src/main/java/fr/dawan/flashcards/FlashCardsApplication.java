@@ -94,7 +94,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 			cardRepository.save(new Card("variable-systeme", Category.DEFINITION,"Qu'est ce qu'une \"variable système\" ?",""));
 			cardRepository.save(new Card("variable-environnement", Category.DEFINITION,"Qu'est ce qu'une \"variable d'environnement\" ?",""));
 	
-			cardRepository.save(new Card("framework", Category.DEFINITION, "Qu'est ce qu'un \"framework\" ?","En Informatique, un framework {cadre de travail} est un ensemble cohérent de composants logiciels structurels qui sert à créer les fondations ainsi que les grandes lignes de tout ou partie d'un logiciel, c'est-à-dire une architecture."));
+			cardRepository.save(new Card("framework", Category.DEFINITION, "Qu'est ce qu'un \"framework\" ?",""));
 			
 			cardRepository.save(new Card("back-end", Category.ARCHITECTURE,"Qu'est ce que le terme \"back-end\" signifie ?",""));
 			cardRepository.save(new Card("front-end", Category.ARCHITECTURE,"Qu'est ce que le terme \"front-end\" signifie ?",""));
@@ -119,11 +119,11 @@ public class FlashCardsApplication implements CommandLineRunner {
 
 			cardRepository.save(new Card("JSON", Category.EXTENSION,"A quoi correspond cette extension : JSON",""));
 			cardRepository.save(new Card("XML", Category.EXTENSION,"A quoi correspond cette extension : XML",""));
-			cardRepository.save(new Card("TXT", Category.EXTENSION,"A quoi correspond cette extension : TXT","Texte : MIME Type : text/plain"));
-			cardRepository.save(new Card("SQL", Category.EXTENSION,"A quoi correspond cette extension : SQL","Structured Query Language"));
-			cardRepository.save(new Card("CSV", Category.EXTENSION,"A quoi correspond cette extension : CSV","Comma Separated Value"));
-			cardRepository.save(new Card("WAR", Category.EXTENSION,"A quoi correspond cette extension : WAR","Web ARchive"));
-			cardRepository.save(new Card("JAR", Category.EXTENSION,"A quoi correspond cette extension : JAR","Java ARchive"));
+			cardRepository.save(new Card("TXT", Category.EXTENSION,"A quoi correspond cette extension : TXT",""));
+			cardRepository.save(new Card("SQL", Category.EXTENSION,"A quoi correspond cette extension : SQL",""));
+			cardRepository.save(new Card("CSV", Category.EXTENSION,"A quoi correspond cette extension : CSV",""));
+			cardRepository.save(new Card("WAR", Category.EXTENSION,"A quoi correspond cette extension : WAR",""));
+			cardRepository.save(new Card("JAR", Category.EXTENSION,"A quoi correspond cette extension : JAR",""));
 
 			cardRepository.save(new Card("trello", Category.SOFTWARE,"Quel est la fonction de ce logiciel : Trello",""));
 			cardRepository.save(new Card("jacoco", Category.SOFTWARE,"Quel est la fonction de ce logiciel : JaCoCo",""));
