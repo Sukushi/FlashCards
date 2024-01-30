@@ -5,12 +5,15 @@ import fr.dawan.flashcards.business.generic.BaseEntity;
 import fr.dawan.flashcards.business.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
 
 @Entity
+@Table(name="passage")
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,17 +21,20 @@ import java.time.LocalDate;
 @Accessors(chain = true)
 public class Passage extends BaseEntity {
 
-    // TODO Romain
-
     /**
-     * On est d'accord pour dire que Passage, à l'heure actuelle, est la table de jointure entre Card et User ?
+     * L'Objet Passage : Représentation de la relation entre User et Card avec en plus en paramètres
+     * un Niveau et une date de dernière mise à jour.\n
      *
-     * On est dans une relation 1 ou plusieurs passages correspond(ent) à Uniquement 1 User et à uniquement 1 Card
+     * La Table passage : Table de jointure de la relation @ManyToMany UserCard
      *
-     * Star UML : Diagramme de classe
+     * 1 User à plusieurs Card - L'objet User aura une List<Card> : Toutes les cartes d'un seul User
+     * 1 Card à plusieurs User - L'objet Card aura une List<User> : Tous les utilisateurs qui ont choisi d'ajouter cette carte
+     *
+     * Star UML : Diagramme de classe --- Aussi possible de passer par DBeaver → ER Diagram
      * Partie Associations/Relations (les revoir)
+     * // TODO Continuer de documenter l'application
+     * // TODO Faire le DC de Flashcards
      *
-     * Faire le DC de Flashcards
      *
      */
 
@@ -38,13 +44,16 @@ public class Passage extends BaseEntity {
 
     // Annotation ?? Embedded ?
     // TODO Initialiser dans le constructeur / les constructeurs
+    /**
+     * Soit :
+     * - je delombokise cette classe et j'ajoute LocalDate.now() à l'instanciation de chaque passage - setToday()
+     * - Possibilité de la faire via le @NoArgsConstructor ?
+     */
     private LocalDate dateUpdate;
+
     @ManyToOne
     private User user;
 
-    /*
-    On va pouvoir retrouver la date de création du passage via la BDD
-     */
 
     public boolean isDaily() {
         return LocalDate.now().compareTo(dateUpdate) >= niveau.getDuree();
