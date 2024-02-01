@@ -1,4 +1,4 @@
-package fr.dawan.flashcards.records.config;
+package fr.dawan.flashcards.records.init;
 
 import fr.dawan.flashcards.business.card.*;
 import fr.dawan.flashcards.business.passage.*;
@@ -6,18 +6,32 @@ import fr.dawan.flashcards.business.user.Role;
 import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserServiceBDD;
 import fr.dawan.flashcards.security.auth.RegisterDto;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 import java.util.List;
 
-// Does it need any Annotation ?? GG BG
-public class ConfigData {
+// Does it need any Annotation ??
+@Slf4j
+public class InitData {
 
     // Useless ??
     private CardServiceBDD cardService;
     private UserServiceBDD userService;
     private PassageServiceBDD passageService;
 
+
+
+    /*
+    Créer trois méthodes
+        Une qui initialise la liste de Cartes
+        Une autre qui initialise la liste d'Utilisateurs
+        Une autre qui initialise une liste de Passage
+
+        // Ajouter la liste de Cartes en BDD → via le service
+        // Ajouter la liste d'Utilisateurs en BDD → via le service associé
+        // Ajouter la liste de Passage en BDD → via le service associé
+     */
 
     // Créer trois méthodes privées qui retournent les données :: Factoriser le code
     public static void main(String[] args) {
@@ -134,7 +148,6 @@ public class ConfigData {
         cardList.add(new Card("Spring", Category.FRAMEWORK, "Quels sont les particularités de ce framework : Spring", ""));
         cardList.add(new Card("Symfony", Category.FRAMEWORK, "Quels sont les particularités de ce framework : Symfony", ""));
 
-
         userDtos.add(new RegisterDto("baptiste", "baptou", "baptiste.l@gmail.com", Role.ADMIN));
         userDtos.add(new RegisterDto("romain", "roro", "romain.c@gmail.com", Role.ADMIN));
         userDtos.add(new RegisterDto("yanis", "yanou", "yanis.a@gmail.com", Role.MODO));
@@ -143,9 +156,9 @@ public class ConfigData {
         userDtos.add(new RegisterDto("titouan", "titou", "titouan.m@gmail.com", Role.USER));
 
         passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
-        passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
-        passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
-        passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
-        passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
+        passages.add(new Passage(cardList.get(1), Niveau.NIVEAU1, LocalDate.now(), temoin));
+        passages.add(new Passage(cardList.get(2), Niveau.NIVEAU1, LocalDate.now(), temoin));
+        passages.add(new Passage(cardList.get(3), Niveau.NIVEAU1, LocalDate.now(), temoin));
+        passages.add(new Passage(cardList.get(4), Niveau.NIVEAU1, LocalDate.now(), temoin));
     }
 }
