@@ -1,8 +1,6 @@
 package fr.dawan.flashcards.business.user;
 
 import fr.dawan.flashcards.business.generic.GenericControllerMVC;
-import fr.dawan.flashcards.business.passage.PassageDto;
-import fr.dawan.flashcards.business.passage.PassageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

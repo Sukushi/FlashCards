@@ -17,11 +17,6 @@ public class CardControllerMVC extends GenericControllerMVC<CardDto, CardService
         return super.findById(id, model);
     }
 
-//    @PostMapping("addAnnexe/{dossierId}")
-//    public String addAnnexe(@PathVariable long dossierId, @RequestParam MultipartFile file){
-//        service.addAnnexe(dossierId,file);
-//        return "redirect:/dossiers/" + dossierId;
-//    }
     @Override
     protected CardDto getDTO() {
         return new CardDto();

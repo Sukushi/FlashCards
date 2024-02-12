@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/v1/passages")
-// localhost:8080/users -> display user's table
-// localhost:8080/users/{id} -> display user's information from user.id = id
 public class PassageControllerREST extends GenericControllerREST<PassageDto, PassageService> {
 	
 	public PassageControllerREST(PassageService service) {
@@ -19,10 +17,7 @@ public class PassageControllerREST extends GenericControllerREST<PassageDto, Pas
 	}
 	
 	@GetMapping("/niveau/{niveau}/{userId}")
-    // localhost:8080/passages/niveau/NIVEAU2/1
-	/**
-	 * Récupère toutes les cartes d'un utilisateur pour un niveau spécifique
-	 */
+    /* localhost:8080/passages/niveau/NIVEAU2/1 */
     public Page<PassageDto> findByNiveauAndUserId(@PathVariable String niveau, @PathVariable long userId, Pageable pageable) {
         return service.findByNiveauAndUserId(Niveau.valueOf(niveau),userId, pageable);
     }
