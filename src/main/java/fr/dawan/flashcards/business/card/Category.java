@@ -13,4 +13,5 @@ public enum Category {
 }
 /*
 Later Update ? : Switch from a Category/card --> List<Category> /card
+TAG like categories, a card can be in multiple categories
  */
