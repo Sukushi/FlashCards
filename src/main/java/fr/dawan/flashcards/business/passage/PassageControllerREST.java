@@ -1,7 +1,6 @@
 package fr.dawan.flashcards.business.passage;
 
-import fr.dawan.flashcards.business.card.CardDto;
-import fr.dawan.flashcards.business.generic.GenericController;
+import fr.dawan.flashcards.business.generic.GenericControllerREST;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("passages")
+@RequestMapping("api/v1/passages")
 // localhost:8080/users -> display user's table
 // localhost:8080/users/{id} -> display user's information from user.id = id
-public class PassageController extends GenericController<PassageDto, PassageService> {
+public class PassageControllerREST extends GenericControllerREST<PassageDto, PassageService> {
 	
-	public PassageController(PassageService service) {
+	public PassageControllerREST(PassageService service) {
 		super(service);
 	}
 	

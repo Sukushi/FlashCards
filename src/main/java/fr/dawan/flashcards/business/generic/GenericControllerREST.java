@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
-public abstract class GenericController<D,S extends GenericService<D>> {
+public abstract class GenericControllerREST<D,S extends GenericService<D>> {
     protected final S service;
     @GetMapping
     public Page<D> findAll(Pageable pageable) {
