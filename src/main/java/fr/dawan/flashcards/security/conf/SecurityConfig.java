@@ -1,10 +1,12 @@
 package fr.dawan.flashcards.security.conf;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import fr.dawan.flashcards.security.interceptors.JwtFilter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -17,10 +19,15 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
-
-	@Autowired
-	private UserDetailsService userDetailsService;
+	private final UserDetailsService userDetailsService;
+	private final JwtFilter jwtFilter;
+	public static final String[] AUTHORIZED_URL = new String[] {
+			"/auth/**",
+			"/public/**"
+	};
 
 	@Bean
     public PasswordEncoder passwordEncoder() {
@@ -37,11 +44,9 @@ public class SecurityConfig {
         return http.cors(AbstractHttpConfigurer::disable)
 				.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
-						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // route options nécessaires aux POST
+						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 						.requestMatchers("/","/home","/login","/register").permitAll()
-						.anyRequest().permitAll()) // temporaire pour tester : autorise toutes les routes sans sécurité
-						//.anyRequest().authenticated()) //anyRequest : applique la règle sur toutes les routes qui restent
-				//.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+						.anyRequest().permitAll())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.userDetailsService(userDetailsService)
 				.build();

@@ -9,6 +9,7 @@ import fr.dawan.flashcards.security.auth.RegisterDto;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 // Does it need any Annotation ??
@@ -47,7 +48,7 @@ public class InitData {
          * C'est par défaut l'utilisateur PUBLIC ?
          */
         User temoin = new User();
-        temoin.setName("temoin").setEmail("temoin@mail.ff").setRole(Role.USER);
+        temoin.setName("temoin").setEmail("temoin@mail.ff").setRoles(new ArrayList<>());
 
         List<Card> cardList = null;
 

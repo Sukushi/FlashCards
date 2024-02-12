@@ -18,18 +18,18 @@ public class JoeLaBidouille {
         String password = "Joespassword";
         String email = "joe@email.com";
         User joe = new User(name,password,email);
-        joe.setRole(Role.USER);
+        //joe.setRole(Role.USER);
 
         // Data from csv
 
 
         // Création d'un SUPER USER
         User superJoe = new User("admin", "admin", "admin@email.com");
-        superJoe.setRole(Role.ADMIN);
+        //superJoe.setRole(Role.ADMIN);
 
         // Connexion - Authentification
 
-        joe.getAuthorities();
+        //joe.getAuthorities();
 
         // Affichage
 

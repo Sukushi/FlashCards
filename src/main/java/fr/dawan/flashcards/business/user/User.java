@@ -2,8 +2,7 @@ package fr.dawan.flashcards.business.user;
 
 import fr.dawan.flashcards.business.generic.BaseEntity;
 import fr.dawan.flashcards.business.passage.Passage;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,13 +23,32 @@ import java.util.Objects;
 @Accessors(chain = true)
 public class User extends BaseEntity implements UserDetails {
 
+    /*
+    J'aimerais bien refactor pour avoir email, password en premier. Le nom ensuite, son (ou ses ?) tiroir(s)
+    et enfin ses rôles
+     */
     private String name;
     private String password; // spring security à implémenter
     @OneToMany(mappedBy = "user")
 	@ToString.Exclude
-	private List<Passage> tiroir; // Kesako ? : Bibliothèque perso == Tiroir
+	private List<Passage> tiroir;
     private String email;
-    private Role role;
+
+    private boolean active;
+
+    @Enumerated(value = EnumType.ORDINAL)
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<Role> roles
+    // TODO Si je modifie le role en une List<Role> :
+    /**
+     * L'utilisateur peut donc avoir plusieurs rôles
+     * Ce n'est pas vraiment ce que je voulais ?
+     * Je veux plutôt que chaque question est une ou plusieurs "category" tag like
+     *
+     * En même temps, c'est ce que je souhaite aussi ? Un Modo est aussi un User et un Admin est aussi un Modo et
+     * un User ...
+     */
+    ;
 
     public User(String name, String password, String email) {
         this.name = name;
@@ -43,13 +61,13 @@ public class User extends BaseEntity implements UserDetails {
         this.name = name;
         this.password = password;
         this.email = email;
-		this.role = role;
+		this.roles = getRoles();
 	}
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.stream(Objects.toString(role, "PUBLIC").split(",")).map(SimpleGrantedAuthority::new).toList();
-        // Récupérer l'user avec la liste de GrantedAuthority qui correspond au nom du role donnée à l'utilisateur
+        return Arrays.stream(Objects.toString(getRoles(), "PUBLIC").split(",")).map(SimpleGrantedAuthority::new).toList();
+        //return roles;
     }
 
     @Override
