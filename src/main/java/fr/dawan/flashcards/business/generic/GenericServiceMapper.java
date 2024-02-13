@@ -8,10 +8,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public abstract class GenericServiceMapper<E extends BaseEntity, R extends JpaRepository<E, Long>> {
-	
 	protected final R repository;
-	
-	// méthode pour le mapping
 	public E getEntity(long id) throws Exception {
 		Optional<E> entity = repository.findById(id);
 		if (entity.isPresent()) {

@@ -15,7 +15,7 @@ class GenericControllerRESTTest {
     /*
     Tester les controllers ? == Obligatoirement un test d'intégration ??
      */
-    private CardService service = mock(CardService.class);
+    private GenericService service = mock(GenericServiceBDD.class);
 
     private GenericControllerREST controller;
 
