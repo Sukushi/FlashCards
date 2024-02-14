@@ -62,10 +62,10 @@ public class InitData {
         cardList.add(new Card("classe", Category.DEFINITION, "Qu'est ce qu'une \"classe\" ?", "En programmation orientée objet, la déclaration d'une classe regroupe des membres, méthodes et propriétés (attributs) communs à un ensemble d'objets. La classe déclare, d'une part, des attributs représentant l'état des objets et, d'autre part, des méthodes représentant leur comportement."));
         cardList.add(new Card("dependance", Category.DEFINITION, "Qu'est ce qu'une \"dépendance fonctionnelle\" ?", "En théorie des bases de données relationnelles, une dépendance fonctionnelle est une contrainte entre deux ensembles d'attributs dans une relation (table) d'une base de données"));
 
-        cardList.add(new Card("objet", Category.DEFINITION, "Qu'est ce qu'un \"objet\" en programmation ?", ""));
-        cardList.add(new Card("algorithme", Category.DEFINITION, "Qu'est ce qu'un \"algorithme\" ?", ""));
-        cardList.add(new Card("heritage", Category.DEFINITION, "Qu'est ce qu'un \"heritage\" ?", ""));
-        cardList.add(new Card("encapsulation", Category.DEFINITION, "Qu'est ce que l' \"encapsulation\" ? Quels sont ces avantages ?", ""));
+        cardList.add(new Card("objet", Category.DEFINITION, "Qu'est ce qu'un \"objet\" en programmation ?", "En informatique, un objet est un conteneur symbolique et autonome qui contient des informations et des mécanismes concernant un sujet, manipulés dans un programme."));
+        cardList.add(new Card("algorithme", Category.DEFINITION, "Qu'est ce qu'un \"algorithme\" ?", "Ensemble de règles opératoires dont l'application permet de résoudre un problème énoncé au moyen d'un nombre fini d'opérations. Un algorithme peut être traduit, grâce à un langage de programmation, en un programme exécutable par un ordinateur."));
+        cardList.add(new Card("heritage", Category.DEFINITION, "Qu'est ce qu'un \"heritage\" ?", "L'héritage établit une relation de généralisation-spécialisation qui permet d'hériter dans la déclaration d’une nouvelle classe (appelée classe dérivée, classe fille, classe enfant ou sous-classe) des caractéristiques (propriétés et méthodes) de la déclaration d'une autre classe (appelée classe de base, classe mère, classe parent ou super-classe)."));
+        cardList.add(new Card("encapsulation", Category.DEFINITION, "Qu'est ce que le principe d'\"encapsulation\" ? Quels sont ces avantages ?", ""));
         cardList.add(new Card("requete", Category.DEFINITION, "Qu'est ce qu'une \"requête\" ? Donner 3 exemples.", ""));
         cardList.add(new Card("cyclomatique", Category.DEFINITION, "Qu'est ce que la \"complexité cyclomatique\" ?", ""));
         cardList.add(new Card("dette_technique", Category.DEFINITION, "Qu'est ce que la \"dette technique\" ?", ""));
