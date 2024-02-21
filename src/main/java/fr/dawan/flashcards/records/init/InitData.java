@@ -37,7 +37,7 @@ public class InitData {
     // Créer trois méthodes privées qui retournent les données :: Factoriser le code
     public static void main(String[] args) {
 
-        List<RegisterDto> userDtos = null;
+        List<RegisterDto> dtos = null;
 
         List<Passage> passages = null;
 
@@ -93,6 +93,7 @@ public class InitData {
         cardList.add(new Card("inversion-dependances", Category.DEFINITION, "Qu'est ce qu'une \"inversion des dépendances\" ?", "En programmation orientée objet, le principe d'inversion des dépendances (dependency inversion principle) fait référence à une forme spécifique de découplage des modules logiciels1. Il correspond au « D » de l'acronyme SOLID."));
 
         cardList.add(new Card("cahier-des-charges", Category.DEFINITION, "Qu'est ce qu'un \"cahier des charges\" ?", ""));
+        cardList.add(new Card("user-story", Category.DEFINITION, "Qu'est ce qu'une \"User Story\" ?", "A user story is a short, simple description of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system. TEMPLATE = As a <type of user>, I want <some goal> so that <some reason>."));
         cardList.add(new Card("plugin", Category.DEFINITION, "Qu'est ce qu'un \"plugin\" ?", ""));
         cardList.add(new Card("cardinalite", Category.DEFINITION, "Qu'est ce qu'une \"cardinalité\" ?", ""));
         cardList.add(new Card("semantique", Category.DEFINITION, "Qu'est ce que le terme \"sémantique\" signifie ?", ""));
@@ -150,12 +151,12 @@ public class InitData {
         cardList.add(new Card("Spring", Category.FRAMEWORK, "Quels sont les particularités de ce framework : Spring", ""));
         cardList.add(new Card("Symfony", Category.FRAMEWORK, "Quels sont les particularités de ce framework : Symfony", ""));
 
-        userDtos.add(new RegisterDto("baptiste", "baptou", "baptiste.l@gmail.com", Role.ADMIN));
-        userDtos.add(new RegisterDto("romain", "roro", "romain.c@gmail.com", Role.ADMIN));
-        userDtos.add(new RegisterDto("yanis", "yanou", "yanis.a@gmail.com", Role.MODO));
-        userDtos.add(new RegisterDto("florian", "floflo", "florian.d@gmail.com", Role.USER));
-        userDtos.add(new RegisterDto("chayanne", "chayou", "chayanne.p@gmail.com", Role.USER));
-        userDtos.add(new RegisterDto("titouan", "titou", "titouan.m@gmail.com", Role.USER));
+        dtos.add(new RegisterDto("baptiste", "baptou", "baptiste.l@gmail.com", Role.ADMIN));
+        dtos.add(new RegisterDto("romain", "roro", "romain.c@gmail.com", Role.ADMIN));
+        dtos.add(new RegisterDto("yanis", "yanou", "yanis.a@gmail.com", Role.MODO));
+        dtos.add(new RegisterDto("florian", "floflo", "florian.d@gmail.com", Role.USER));
+        dtos.add(new RegisterDto("chayanne", "chayou", "chayanne.p@gmail.com", Role.USER));
+        dtos.add(new RegisterDto("titouan", "titou", "titouan.m@gmail.com", Role.USER));
 
         passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
         passages.add(new Passage(cardList.get(1), Niveau.NIVEAU1, LocalDate.now(), temoin));
