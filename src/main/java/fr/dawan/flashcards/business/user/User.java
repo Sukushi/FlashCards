@@ -38,7 +38,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Enumerated(value = EnumType.ORDINAL)
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<Role> roles
+    private List<Role> roles;
     // TODO Si je modifie le role en une List<Role> :
     /**
      * L'utilisateur peut donc avoir plusieurs rôles
@@ -48,20 +48,13 @@ public class User extends BaseEntity implements UserDetails {
      * En même temps, c'est ce que je souhaite aussi ? Un Modo est aussi un User et un Admin est aussi un Modo et
      * un User ...
      */
-    ;
-
-    public User(String name, String password, String email) {
-        this.name = name;
-        this.password = password;
-        this.email = email;
-    }
 
     // TODO Need this car pas d'attribution de roles à la création d'un User ?
-    public User(String name, String password, String email, Role role) {
+    public User(String name, String password, String email, List<Role> roles) {
         this.name = name;
         this.password = password;
         this.email = email;
-		this.roles = getRoles();
+		this.roles = roles;
 	}
 
     @Override
@@ -77,7 +70,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return name;
+        return email;
     }
 
     @Override
@@ -97,6 +90,6 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return isActive();
     }
 }

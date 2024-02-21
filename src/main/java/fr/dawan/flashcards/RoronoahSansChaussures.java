@@ -34,7 +34,7 @@ public class RoronoahSansChaussures {
         String name = "Roro";
         String password = "Rorospassword";
         String email = "Roro@email.com";
-        User user = new User(name,password,email);;
+        //User user = new User(name,password,email);;
         //List<Card> list = user.getTiroir().stream().filter(passage -> passage.getNiveau() == Niveau.NIVEAU2).map(Passage::getCard).toList();// récupère que les card de niveau 2
         //List<Card> list1 = user.getTiroir().stream().filter(Passage::isDaily).map(Passage::getCard).toList(); // récupère les daily
 
@@ -42,17 +42,17 @@ public class RoronoahSansChaussures {
         System.out.println(date.toString());
 
         System.out.println("--- import export ---");
-        try {
-            System.out.println("- import -");
-            CSVFlashCard csv = new CSVFlashCard();
-            User userImport = csv.importCommode(user);
-            System.out.println(userImport);
-
-            System.out.println("- export -");
-            csv.exportCommode(userImport);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            System.out.println("- import -");
+//            CSVFlashCard csv = new CSVFlashCard();
+//            User userImport = csv.importCommode(user);
+//            System.out.println(userImport);
+//
+//            System.out.println("- export -");
+//            csv.exportCommode(userImport);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
 
 		/* System.out.println("---");

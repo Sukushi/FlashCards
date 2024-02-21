@@ -151,12 +151,12 @@ public class InitData {
         cardList.add(new Card("Spring", Category.FRAMEWORK, "Quels sont les particularités de ce framework : Spring", ""));
         cardList.add(new Card("Symfony", Category.FRAMEWORK, "Quels sont les particularités de ce framework : Symfony", ""));
 
-        dtos.add(new RegisterDto("baptiste", "baptou", "baptiste.l@gmail.com", Role.ADMIN));
-        dtos.add(new RegisterDto("romain", "roro", "romain.c@gmail.com", Role.ADMIN));
-        dtos.add(new RegisterDto("yanis", "yanou", "yanis.a@gmail.com", Role.MODO));
-        dtos.add(new RegisterDto("florian", "floflo", "florian.d@gmail.com", Role.USER));
-        dtos.add(new RegisterDto("chayanne", "chayou", "chayanne.p@gmail.com", Role.USER));
-        dtos.add(new RegisterDto("titouan", "titou", "titouan.m@gmail.com", Role.USER));
+        dtos.add(new RegisterDto("baptiste", "baptou", "baptiste.l@gmail.com"));
+        dtos.add(new RegisterDto("romain", "roro", "romain.c@gmail.com"));
+        dtos.add(new RegisterDto("yanis", "yanou", "yanis.a@gmail.com"));
+        dtos.add(new RegisterDto("florian", "floflo", "florian.d@gmail.com"));
+        dtos.add(new RegisterDto("chayanne", "chayou", "chayanne.p@gmail.com"));
+        dtos.add(new RegisterDto("titouan", "titou", "titouan.m@gmail.com"));
 
         passages.add(new Passage(cardList.get(0), Niveau.NIVEAU1, LocalDate.now(), temoin));
         passages.add(new Passage(cardList.get(1), Niveau.NIVEAU1, LocalDate.now(), temoin));

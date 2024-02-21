@@ -146,12 +146,12 @@ public class FlashCardsApplication implements CommandLineRunner {
 		}
 
 		if (userRepository.findAll().isEmpty()) {
-			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com", Role.ADMIN));
-			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com", Role.ADMIN));
-			authService.register(new RegisterDto("yanis","yanou","yanis.a@gmail.com", Role.MODO));
-			authService.register(new RegisterDto("florian","floflo","florian.d@gmail.com", Role.USER));
-			authService.register(new RegisterDto("chayanne","chayou","chayanne.p@gmail.com", Role.USER));
-			authService.register(new RegisterDto("titouan","titou","titouan.m@gmail.com", Role.USER));
+			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com"));
+			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com"));
+			authService.register(new RegisterDto("yanis","yanou","yanis.a@gmail.com"));
+			authService.register(new RegisterDto("florian","floflo","florian.d@gmail.com"));
+			authService.register(new RegisterDto("chayanne","chayou","chayanne.p@gmail.com"));
+			authService.register(new RegisterDto("titouan","titou","titouan.m@gmail.com"));
 		}
 		
 		List<Passage> passages = passageRepository.findByUserId(1, Pageable.ofSize(10)).toList();

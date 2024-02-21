@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.security.auth;
 
+import fr.dawan.flashcards.business.user.Role;
 import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserMapper;
 import fr.dawan.flashcards.business.user.UserRepository;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -22,7 +24,7 @@ public class AuthServiceBDD implements AuthService {
     @Override
     public void register(RegisterDto dto) {
         String encodedPassword = encoder.encode(dto.getPassword());
-        User newUser = new User(dto.getUsername(),encodedPassword,dto.getEmail(),dto.getRole());
+        User newUser = new User(dto.getUsername(),encodedPassword,dto.getEmail(), List.of(Role.USER));
         repository.save(newUser);
     }
 
