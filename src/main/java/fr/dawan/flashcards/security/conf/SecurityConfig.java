@@ -26,7 +26,8 @@ public class SecurityConfig {
 	private final JwtFilter jwtFilter;
 	public static final String[] AUTHORIZED_URL = new String[] {
 			"/auth/**",
-			"/public/**"
+			"/public/**",
+			"/api/**"
 	};
 
 	@Bean
@@ -45,7 +46,7 @@ public class SecurityConfig {
 				.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-						.requestMatchers("/","/home","/login","/register").permitAll()
+						.requestMatchers("/","/home","/login","/register","/api/**").permitAll()
 						.anyRequest().permitAll())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.userDetailsService(userDetailsService)
