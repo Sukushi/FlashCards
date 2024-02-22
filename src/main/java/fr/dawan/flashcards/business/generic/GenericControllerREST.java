@@ -9,8 +9,10 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 public abstract class GenericControllerREST<D,S extends GenericService<D>> {
     protected final S service;
+	
     @GetMapping
     public Page<D> findAll(Pageable pageable) {
         return service.findAll(pageable);
