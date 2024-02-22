@@ -41,7 +41,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// Méthode qui s'exécute avant L'application
+
 		System.out.println("\t>>>>>>>>> Run before App\n");
 
 		/*

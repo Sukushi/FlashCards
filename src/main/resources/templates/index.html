@@ -7,8 +7,6 @@
 
     <meta charset="utf-8">
     <title>Simple REST API Explorer</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -34,22 +32,22 @@
 <div class="container">
     <div class="sixteen columns">
         <h1 class="remove-bottom" style="margin-top: 40px">Simple REST API Explorer <img src="img/spinner.gif" id="loading" alt="" title="" width="16" height="16" style="display: none;" /></h1>
-        <h5>MoviesDB Example API</h5>
+        <h5>cardsDB Example API</h5>
         <hr />
     </div>
     <div class="four columns" id="sidebar">
         <dl>
-            <dt style="margin-top: 0"><h4>Movies</h4></dt>
-            <dd><a href="/movies" data-requestmethod="get">overview</a><small>GET /movies</small></dd>
-            <dd><a href="/movies/1" data-requestmethod="get">detail</a><small>GET /movies/#</small></dd>
-            <dd><a href="/movies/1/photos" data-requestmethod="get">photos</a><small>GET /movies/#/photos</small></dd>
+            <dt style="margin-top: 0"><h4>Flashcards</h4></dt>
+            <dd><a href="/cards" data-requestmethod="get">overview</a><small>GET /cards</small></dd>
+            <dd><a href="/cards/1" data-requestmethod="get">detail</a><small>GET /cards/#</small></dd>
+            <dd><a href="/cards/1/photos" data-requestmethod="get">photos</a><small>GET /cards/#/photos</small></dd>
             <dt><h4>People</h4></dt>
             <dd><a href="/people/1" data-requestmethod="get">detail</a><small>GET /people/#</small></dd>
-            <dd><a href="/people/1/movies" data-requestmethod="get">movies</a><small>GET /people/#/movies</small></dd>
+            <dd><a href="/people/1/cards" data-requestmethod="get">cards</a><small>GET /people/#/cards</small></dd>
             <dt><h4>Genres</h4></dt>
             <dd><a href="/genres" data-requestmethod="get">overview</a><small>GET /genres</small></dd>
             <dd><a href="/genres/5" data-requestmethod="get">detail</a><small>GET /genres/#</small></dd>
-            <dd><a href="/genres/5/movies" data-requestmethod="get">movies</a><small>GET /genres/#/movies</small></dd>
+            <dd><a href="/genres/5/cards" data-requestmethod="get">cards</a><small>GET /genres/#/cards</small></dd>
             <dd><a href="/genres" data-requestmethod="post" data-extradata="title=Fantasy">insert</a><small>POST /genres</small></dd>
             <dd><a href="/genres/5" data-requestmethod="put" data-extradata="title=New title">update</a><small>PUT /genres/#</small></dd>
             <dd><a href="/genres/5" data-requestmethod="delete">delete</a><small>DELETE /genres/#</small></dd>
