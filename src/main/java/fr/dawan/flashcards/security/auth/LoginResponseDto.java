@@ -1,6 +1,6 @@
 package fr.dawan.flashcards.security.auth;
 
-import fr.dawan.flashcards.business.user.UserDto;
+import fr.dawan.flashcards.business.user.UserLoginDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoginResponseDto {
-    private UserDto user;
+    private UserLoginDto user;
     private String token;
 }

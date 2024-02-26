@@ -15,4 +15,5 @@ public interface UserMapper extends GenericMapper<User, UserDto> {
 	@InheritInverseConfiguration
 	User toEntity(UserDto dto);
 	
+	UserLoginDto toLoginDto(User entity);
 }

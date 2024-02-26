@@ -16,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -25,6 +27,8 @@ public class SecurityConfig {
 	private final UserDetailsService userDetailsService;
 	private final JwtFilter jwtFilter;
 	public static final String[] AUTHORIZED_URL = new String[] {
+			"/",
+			"/home",
 			"/auth/**",
 			"/public/**",
 			"/api/**"
@@ -46,10 +50,24 @@ public class SecurityConfig {
 				.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-						.requestMatchers("/","/home","/login","/register","/api/**").permitAll()
+						.requestMatchers(AUTHORIZED_URL).permitAll()
 						.anyRequest().permitAll())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.userDetailsService(userDetailsService)
 				.build();
     }
+	
+	@Bean
+	public WebMvcConfigurer myMvcConfigurer() {
+		
+		return new WebMvcConfigurer() {
+			
+			// CORS ORIGIN
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("http://localhost:5173")
+						.allowedMethods("*", "GET", "POST", "PUT", "DELETE", "OPTIONS").allowedHeaders("*");
+			}
+		};
+	}
 }
