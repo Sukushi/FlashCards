@@ -175,7 +175,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 			passageService.insertPassage(2,15);
 			passageService.insertPassage(2,16);
 			passageService.insertPassage(2,17);
-			passageService.insertPassage(2,36);			passageService.insertPassage(2,5);
+			passageService.insertPassage(2,36);
 			passageService.insertPassage(1,41);
 			passageService.insertPassage(1,42);
 			passageService.insertPassage(1,43);
