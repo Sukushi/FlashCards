@@ -165,12 +165,13 @@ public class FlashCardsApplication implements CommandLineRunner {
 		try {
 			passageService.insertPassage(1,3);
 			passageService.insertPassage(2,5);
-			passageService.insertPassage(250,3);
-			passageService.insertPassage(2,250);
-			passageService.insertPassage(250,250);
-			passageService.insertPassage(1,70);
-			passageService.insertPassage(1,69);
-			passageService.insertPassage(1,68);
+			// CECI EST UN TEST JE REPETE
+//			passageService.insertPassage(250,3);
+//			passageService.insertPassage(2,250);
+//			passageService.insertPassage(250,250);
+//			passageService.insertPassage(1,70);
+//			passageService.insertPassage(1,69);
+//			passageService.insertPassage(1,68);
 		} catch (Exception e) {
 			// ignorer
 		}
