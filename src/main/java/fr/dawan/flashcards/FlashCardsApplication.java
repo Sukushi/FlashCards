@@ -4,7 +4,6 @@ import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.card.CardRepository;
 import fr.dawan.flashcards.business.card.Category;
 import fr.dawan.flashcards.business.passage.*;
-import fr.dawan.flashcards.business.user.Role;
 import fr.dawan.flashcards.business.user.UserRepository;
 import fr.dawan.flashcards.security.auth.AuthServiceBDD;
 import fr.dawan.flashcards.security.auth.RegisterDto;
@@ -14,7 +13,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Pageable;
 
-import java.time.LocalDate;
 import java.util.List;
 
 
