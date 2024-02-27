@@ -32,8 +32,6 @@ public class FlashCardsApplication implements CommandLineRunner {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
-		// SpringApplication.run(JoeLaBidouille.class, args);
-		// SpringApplication.run(RoronoahSansChaussures.class, args);
 	}
 
 	@Override
@@ -165,12 +163,39 @@ public class FlashCardsApplication implements CommandLineRunner {
 		try {
 			passageService.insertPassage(1,3);
 			passageService.insertPassage(2,5);
-			passageService.insertPassage(250,3);
-			passageService.insertPassage(2,250);
-			passageService.insertPassage(250,250);
-			passageService.insertPassage(1,70);
-			passageService.insertPassage(1,69);
-			passageService.insertPassage(1,68);
+			passageService.insertPassage(2,6);
+			passageService.insertPassage(2,7);
+			passageService.insertPassage(2,8);
+			passageService.insertPassage(2,9);
+			passageService.insertPassage(2,10);
+			passageService.insertPassage(2,11);
+			passageService.insertPassage(2,12);
+			passageService.insertPassage(2,3);
+			passageService.insertPassage(2,14);
+			passageService.insertPassage(2,15);
+			passageService.insertPassage(2,16);
+			passageService.insertPassage(2,17);
+			passageService.insertPassage(2,36);
+			passageService.insertPassage(1,41);
+			passageService.insertPassage(1,42);
+			passageService.insertPassage(1,43);
+			passageService.insertPassage(1,44);
+			passageService.insertPassage(1,20);
+			passageService.insertPassage(1,21);
+			passageService.insertPassage(1,22);
+			passageService.insertPassage(1,2);
+			passageService.insertPassage(1,24);
+			passageService.insertPassage(1,25);
+			passageService.insertPassage(1,26);
+			passageService.insertPassage(1,27);
+			passageService.insertPassage(1,26);
+			// CECI EST UN TEST JE REPETE
+//			passageService.insertPassage(250,3);
+//			passageService.insertPassage(2,250);
+//			passageService.insertPassage(250,250);
+//			passageService.insertPassage(1,70);
+//			passageService.insertPassage(1,69);
+//			passageService.insertPassage(1,68);
 		} catch (Exception e) {
 			// ignorer
 		}
