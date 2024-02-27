@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.business.passage;
 
+import fr.dawan.flashcards.business.card.CardDto;
 import fr.dawan.flashcards.business.generic.GenericServiceBDD;
 import fr.dawan.flashcards.business.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,9 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 	@Override
 	public void insertPassage(long userId, long cardId) {
 		// TODO Genre ici tu peux me dire ce que tu fait et pourquoi tu le fait, et pourquoi tu le fait ici ?
-		PassageDto dto = new PassageDto(0, 0, cardId, Niveau.NIVEAU1, LocalDate.now(), userId);
+		CardDto cardDto = new CardDto();
+		cardDto.setId(cardId);
+		PassageDto dto = new PassageDto(0, 0, /*cardId,*/ cardDto, Niveau.NIVEAU1, LocalDate.now(), userId);
 		Passage entity = mapper.toEntity(dto);
 		repository.save(entity);
 	}
