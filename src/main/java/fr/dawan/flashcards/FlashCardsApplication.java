@@ -32,8 +32,6 @@ public class FlashCardsApplication implements CommandLineRunner {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
-		// SpringApplication.run(JoeLaBidouille.class, args);
-		// SpringApplication.run(RoronoahSansChaussures.class, args);
 	}
 
 	@Override
