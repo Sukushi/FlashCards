@@ -2,18 +2,18 @@ package fr.dawan.flashcards.business.passage;
 
 import fr.dawan.flashcards.business.card.CardDto;
 import fr.dawan.flashcards.business.generic.GenericServiceBDD;
-import fr.dawan.flashcards.business.user.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Optional;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageRepository,PassageDto,PassageMapper> implements PassageService {
+	
+	Random random = new Random();
 	
 	public PassageServiceBDD(PassageRepository repository, PassageMapper mapper) {
 		super(repository, mapper);
@@ -29,14 +29,15 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		return repository.findByUserId(userId,pageable).map(mapper::toDto);
 	}
 	
+	// elle nous sert pour le dev pour remplir notre BDD mais devra être supprimé en prod
 	@Override
-	public void insertPassage(long userId, long cardId) {
-		// TODO Genre ici tu peux me dire ce que tu fait et pourquoi tu le fait, et pourquoi tu le fait ici ?
+	public PassageDto insertPassage(long userId, long cardId) {
 		CardDto cardDto = new CardDto();
 		cardDto.setId(cardId);
-		PassageDto dto = new PassageDto(0, 0, /*cardId,*/ cardDto, Niveau.NIVEAU1, LocalDate.now(), userId);
+		PassageDto dto = new PassageDto(0, 0, /*cardId,*/ cardDto, Niveau.NIVEAU1, LocalDate.of(2024,1,1), userId);
 		Passage entity = mapper.toEntity(dto);
-		repository.save(entity);
+		Passage saved = repository.save(entity);
+		return mapper.toDto(saved);
 	}
 
 	@Override
@@ -56,6 +57,17 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		Passage passage = repository.findById(passageId).get();
 		passage.setNiveau(Niveau.NIVEAU1).setToday();
 		repository.save(passage);
+	}
+	
+	@Override
+	public List<PassageDto> getDailyAll(long userId) {
+		return repository.findByUserId(userId, Pageable.unpaged()).filter(Passage::isDaily).map(mapper::toDto).toList();
+	}
+	
+	@Override
+	public PassageDto getDaily(long userId) {
+		List<PassageDto> dailyAll = getDailyAll(userId);
+		return dailyAll.get(random.nextInt(dailyAll.size()));
 	}
 
 	// TODO : Améliorer encore la compréhension et l'assimilation de ci-dessus

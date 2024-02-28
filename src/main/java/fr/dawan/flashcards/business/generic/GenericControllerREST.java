@@ -17,6 +17,10 @@ public abstract class GenericControllerREST<D,S extends GenericService<D>> {
     public Page<D> findAll(Pageable pageable) {
         return service.findAll(pageable);
     }
+    @GetMapping("/unpaged")
+	public Page<D> findAll() {
+        return service.findAll(Pageable.unpaged());
+    }
     @GetMapping("/{id}")
     public Optional<D> findById(@PathVariable long id) {
         return service.findById(id);
