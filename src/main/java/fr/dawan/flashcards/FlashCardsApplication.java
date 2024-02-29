@@ -150,6 +150,7 @@ public class FlashCardsApplication implements CommandLineRunner {
 		}
 
 		if (userRepository.findAll().isEmpty()) {
+			authService.register(new RegisterDto("user","visitor","visitor@user.com"));
 			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com"));
 			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com"));
 			authService.register(new RegisterDto("yanis","yanou","yanis.a@gmail.com"));
@@ -158,10 +159,21 @@ public class FlashCardsApplication implements CommandLineRunner {
 			authService.register(new RegisterDto("titouan","titou","titouan.m@gmail.com"));
 		}
 		
-		List<Passage> passages = passageRepository.findByUserId(1, Pageable.ofSize(10)).toList();
-		System.out.println(passages);
 		try {
 			passageService.insertPassage(1,3);
+			passageService.insertPassage(1,41);
+			passageService.insertPassage(1,42);
+			passageService.insertPassage(1,43);
+			passageService.insertPassage(1,44);
+			passageService.insertPassage(1,20);
+			passageService.insertPassage(1,21);
+			passageService.insertPassage(1,22);
+			passageService.insertPassage(1,2);
+			passageService.insertPassage(1,24);
+			passageService.insertPassage(1,25);
+			passageService.insertPassage(1,26);
+			passageService.insertPassage(1,27);
+			passageService.insertPassage(1,26);
 			passageService.insertPassage(2,5);
 			passageService.insertPassage(2,6);
 			passageService.insertPassage(2,7);
@@ -176,19 +188,6 @@ public class FlashCardsApplication implements CommandLineRunner {
 			passageService.insertPassage(2,16);
 			passageService.insertPassage(2,17);
 			passageService.insertPassage(2,36);
-			passageService.insertPassage(1,41);
-			passageService.insertPassage(1,42);
-			passageService.insertPassage(1,43);
-			passageService.insertPassage(1,44);
-			passageService.insertPassage(1,20);
-			passageService.insertPassage(1,21);
-			passageService.insertPassage(1,22);
-			passageService.insertPassage(1,2);
-			passageService.insertPassage(1,24);
-			passageService.insertPassage(1,25);
-			passageService.insertPassage(1,26);
-			passageService.insertPassage(1,27);
-			passageService.insertPassage(1,26);
 			// CECI EST UN TEST JE REPETE
 //			passageService.insertPassage(250,3);
 //			passageService.insertPassage(2,250);

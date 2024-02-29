@@ -4,6 +4,7 @@ import fr.dawan.flashcards.business.generic.GenericService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface PassageService extends GenericService<PassageDto> {
@@ -13,7 +14,7 @@ public interface PassageService extends GenericService<PassageDto> {
 	
 	Page<PassageDto> findByUserId(long userId, Pageable pageable);
 
-	PassageDto insertPassage(long userId, long cardId);
+	PassageDto insertPassage(long userId, long cardId, Niveau niveau, LocalDate date);
 
 	// Fonction qui fait évoluer le passage en mettant à jour le niveau au niveau suivant
 	void upNiveau(long passageId);
