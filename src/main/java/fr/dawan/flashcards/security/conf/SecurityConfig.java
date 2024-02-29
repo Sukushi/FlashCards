@@ -32,9 +32,13 @@ public class SecurityConfig {
 			"/home",
 			"/auth/**",
 			"/public/**",
-			"/api/v1/cards"
+			"/api/v1/cards",
+			"/api/v1/passages/**"
 	};
-
+	public static final String[] AUTHORIZED_GET = new String[] {
+			"api/v1/cards/**"
+	};
+	
 	@Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -52,6 +56,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 						.requestMatchers(AUTHORIZED_URL).permitAll()
+						.requestMatchers(HttpMethod.GET,AUTHORIZED_GET).permitAll()
 						.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
