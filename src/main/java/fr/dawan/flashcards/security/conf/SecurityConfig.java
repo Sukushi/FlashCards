@@ -31,7 +31,8 @@ public class SecurityConfig {
 			"/",
 			"/home",
 			"/auth/**",
-			"/public/**"
+			"/public/**",
+			"/api/v1/cards"
 	};
 
 	@Bean
