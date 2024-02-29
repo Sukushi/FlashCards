@@ -39,6 +39,10 @@ public class User extends BaseEntity implements UserDetails {
     @Enumerated(value = EnumType.ORDINAL)
     @ElementCollection(fetch = FetchType.EAGER)
     private List<Role> roles;
+	
+	@OneToMany(mappedBy = "user", cascade = {CascadeType.REMOVE})
+	@ToString.Exclude
+	private List<Passage> passages;
     // TODO Si je modifie le role en une List<Role> :
     /**
      * L'utilisateur peut donc avoir plusieurs rôles
