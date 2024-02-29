@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -30,8 +31,7 @@ public class SecurityConfig {
 			"/",
 			"/home",
 			"/auth/**",
-			"/public/**",
-			"/api/**"
+			"/public/**"
 	};
 
 	@Bean
@@ -51,8 +51,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 						.requestMatchers(AUTHORIZED_URL).permitAll()
-						.anyRequest().permitAll())
+						.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 				.userDetailsService(userDetailsService)
 				.build();
     }

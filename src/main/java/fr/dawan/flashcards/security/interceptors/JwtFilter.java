@@ -30,7 +30,7 @@ public class JwtFilter extends OncePerRequestFilter {
         log.info("request.getRequestURI() = " + request.getRequestURI());
         if (!request.getMethod().equals("OPTIONS") && isInterceptedUri(request.getRequestURI())) {
             String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-            if (authHeader == null || authHeader.startsWith("Bearer ")) {
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
                 throw new ServletException("Invalid Authorization");
             }
             String token = authHeader.substring(7);
