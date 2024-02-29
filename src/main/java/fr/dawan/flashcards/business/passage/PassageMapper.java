@@ -9,11 +9,12 @@ import org.mapstruct.*;
 public interface PassageMapper extends GenericMapper<Passage, PassageDto> {
     @Override
     @Mapping(source = "user.id", target = "userId")
+	@Mapping(source = "niveau.duree", target = "duree")
     /*@Mapping(source = "card.id", target = "cardId")*/
     PassageDto toDto(Passage entity);
 	
 	@Override
-	@InheritInverseConfiguration
+	@Mapping(source = "userId", target = "user.id")
 	Passage toEntity(PassageDto dto);
 	
 }

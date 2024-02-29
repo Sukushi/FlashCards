@@ -11,7 +11,7 @@ public class CardDto {
     private long id;
     private int version;
 	private String title;
-    private String categoryName;
+    private Category category;
     private String question;
     private String answer;
 }

@@ -16,6 +16,7 @@ public class PassageDto {
     /*private long cardId;*/
     private CardDto card; // pour utiliser le post mapping plus facilement
     private Niveau niveau;
-    private LocalDate dateUpdate;
+	private int duree;
+	private LocalDate dateUpdate;
     private long userId;
 }
