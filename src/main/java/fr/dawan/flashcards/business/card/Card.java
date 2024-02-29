@@ -18,7 +18,6 @@ public class Card extends BaseEntity {
     private String title;
     private Category category;
     private String question;
-
     @Column(columnDefinition="Text")
     private String answer;
 }
