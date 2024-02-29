@@ -41,7 +41,7 @@ public class PassageControllerREST extends GenericControllerREST<PassageDto, Pas
 	}
 	
 	@PutMapping("level/{passageId}")
-	public void changeNiveau(@RequestParam(defaultValue = "true") boolean success, @PathVariable long passageId) {
+	public void changeNiveau(@RequestParam(required = false) boolean success, @PathVariable long passageId) {
 		if (success) {
 			service.upNiveau(passageId);
 		} else {
