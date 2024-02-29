@@ -19,6 +19,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 @Component
 @RequiredArgsConstructor
@@ -52,7 +53,7 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 
     private boolean isInterceptedUri(String uri) {
-        return Arrays.stream(SecurityConfig.AUTHORIZED_URL)
+        return Stream.concat(Arrays.stream(SecurityConfig.AUTHORIZED_GET), Arrays.stream(SecurityConfig.AUTHORIZED_URL))
                 .map(url -> url.replace("**",".*"))
                 .noneMatch(uri::matches);
     }

@@ -27,6 +27,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SecurityConfig {
 	private final UserDetailsService userDetailsService;
 	private final JwtFilter jwtFilter;
+	// TODO : faire une map au lieu de plusieurs tableaux
 	public static final String[] AUTHORIZED_URL = new String[] {
 			"/",
 			"/home",
@@ -36,7 +37,7 @@ public class SecurityConfig {
 			"/api/v1/passages/**"
 	};
 	public static final String[] AUTHORIZED_GET = new String[] {
-			"api/v1/cards/**"
+			"/api/v1/cards/**"
 	};
 	
 	@Bean
