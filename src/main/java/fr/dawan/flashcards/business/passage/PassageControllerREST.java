@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -13,6 +14,12 @@ public class PassageControllerREST extends GenericControllerREST<PassageDto, Pas
 	
 	public PassageControllerREST(PassageService service) {
 		super(service);
+	}
+	
+	@Override
+	@PostMapping
+	public PassageDto saveOrUpdate(@RequestBody PassageDto dto) {
+		return super.saveOrUpdate(dto.setDateUpdate(LocalDate.now()));
 	}
 	
 	/*@GetMapping("/niveau/{niveau}/{userId}")
