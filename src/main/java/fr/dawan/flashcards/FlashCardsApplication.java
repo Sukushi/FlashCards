@@ -159,8 +159,8 @@ public class FlashCardsApplication implements CommandLineRunner {
 			// besoin d'encoder le mot de passe car on ne passe pas par 'register' donc on ajoute le mot de passe comme il est défini dans le 'User'
 			userRepository.saveAll(List.of(
 					new User("User",encoder.encode("user"),"user@mail.com",List.of(Role.USER)),
-					new User("Modo",encoder.encode("modo"),"modo@mail.com",List.of(Role.USER,Role.MODO)),
-					new User("Admin",encoder.encode("admin"),"admin@mail.com",List.of(Role.USER,Role.MODO,Role.ADMIN))));
+					new User("Admin",encoder.encode("admin"),"admin@mail.com",List.of(Role.USER,Role.MODO,Role.ADMIN)),
+					new User("Modo",encoder.encode("modo"),"modo@mail.com",List.of(Role.USER,Role.MODO))));
 			// ajoute des utilisateurs avec 'register' (donc uniquement avec le rôle USER)
 			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com"));
 			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com"));
