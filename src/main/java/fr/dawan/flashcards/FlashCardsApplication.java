@@ -4,6 +4,8 @@ import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.card.CardRepository;
 import fr.dawan.flashcards.business.card.Category;
 import fr.dawan.flashcards.business.passage.*;
+import fr.dawan.flashcards.business.user.Role;
+import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserRepository;
 import fr.dawan.flashcards.security.auth.AuthServiceBDD;
 import fr.dawan.flashcards.security.auth.RegisterDto;
@@ -12,6 +14,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -29,6 +32,8 @@ public class FlashCardsApplication implements CommandLineRunner {
 	AuthServiceBDD authService;
 	@Autowired
 	PassageServiceBDD passageService;
+	@Autowired
+	PasswordEncoder encoder;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
@@ -150,7 +155,13 @@ public class FlashCardsApplication implements CommandLineRunner {
 		}
 
 		if (userRepository.findAll().isEmpty()) {
-			authService.register(new RegisterDto("user","visitor","visitor@user.com"));
+			// ajoute des utilisateurs avec un role (pour pouvoir tester l'appli)
+			// besoin d'encoder le mot de passe car on ne passe pas par 'register' donc on ajoute le mot de passe comme il est défini dans le 'User'
+			userRepository.saveAll(List.of(
+					new User("User",encoder.encode("user"),"user@mail.com",List.of(Role.USER)),
+					new User("Modo",encoder.encode("modo"),"modo@mail.com",List.of(Role.USER,Role.MODO)),
+					new User("Admin",encoder.encode("admin"),"admin@mail.com",List.of(Role.USER,Role.MODO,Role.ADMIN))));
+			// ajoute des utilisateurs avec 'register' (donc uniquement avec le rôle USER)
 			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com"));
 			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com"));
 			authService.register(new RegisterDto("yanis","yanou","yanis.a@gmail.com"));
