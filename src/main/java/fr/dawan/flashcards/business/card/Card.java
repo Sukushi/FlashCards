@@ -14,7 +14,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @ToString
 public class Card extends BaseEntity {
-	// this is a webhook ???
     private String title;
     private Category category;
     private String question;

@@ -32,23 +32,12 @@ public class Passage extends BaseEntity {
      *
      * Star UML : Diagramme de classe --- Aussi possible de passer par DBeaver → ER Diagram
      * Partie Associations/Relations (les revoir)
-     * // TODO Continuer de documenter l'application
-     * // TODO Faire le DC de Flashcards
-     *
-     *
      */
 
     @ManyToOne
     private Card card;
     private Niveau niveau;
 
-    // Annotation ?? Embedded ?
-    // TODO Initialiser dans le constructeur / les constructeurs
-    /**
-     * Soit :
-     * - je delombokise cette classe et j'ajoute LocalDate.now() à l'instanciation de chaque passage - setToday()
-     * - Possibilité de la faire via le @NoArgsConstructor ?
-     */
     private LocalDate dateUpdate;
 
     @ManyToOne
