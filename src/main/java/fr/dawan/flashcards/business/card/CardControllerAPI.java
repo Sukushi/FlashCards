@@ -1,6 +1,6 @@
 package fr.dawan.flashcards.business.card;
 
-import fr.dawan.flashcards.business.generic.GenericControllerREST;
+import fr.dawan.flashcards.business.generic.GenericControllerAPI;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/cards")
-public class CardControllerREST extends GenericControllerREST<CardDto, CardService> {
-    public CardControllerREST(CardService service) {
+public class CardControllerAPI extends GenericControllerAPI<CardDto, CardService> {
+    public CardControllerAPI(CardService service) {
         super(service);
     }
 	

@@ -199,18 +199,12 @@ public class FlashCardsApplication implements CommandLineRunner {
 			passageService.insertPassage(2,16);
 			passageService.insertPassage(2,17);
 			passageService.insertPassage(2,36);
-			// CECI EST UN TEST JE REPETE
-//			passageService.insertPassage(250,3);
-//			passageService.insertPassage(2,250);
-//			passageService.insertPassage(250,250);
-//			passageService.insertPassage(1,70);
-//			passageService.insertPassage(1,69);
-//			passageService.insertPassage(1,68);
 		} catch (Exception e) {
 			// ignorer
 		}
 	}
 }
 
+// MEMO arguments
 // --spring.profiles.active=dev
 // --spring.profiles.active=test

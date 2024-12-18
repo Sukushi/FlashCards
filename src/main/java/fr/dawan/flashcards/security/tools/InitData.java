@@ -1,8 +1,7 @@
-package fr.dawan.flashcards.records.init;
+package fr.dawan.flashcards.security.tools;
 
 import fr.dawan.flashcards.business.card.*;
 import fr.dawan.flashcards.business.passage.*;
-import fr.dawan.flashcards.business.user.Role;
 import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserServiceBDD;
 import fr.dawan.flashcards.security.auth.RegisterDto;

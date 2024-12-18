@@ -1,6 +1,5 @@
 package fr.dawan.flashcards.business.generic;
 
-import fr.dawan.flashcards.business.card.CardService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,13 +10,13 @@ import org.springframework.data.domain.Pageable;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class GenericControllerRESTTest {
+class GenericControllerAPITest {
     /*
     Tester les controllers ? == Obligatoirement un test d'intégration ??
      */
     private GenericService service = mock(GenericServiceBDD.class);
 
-    private GenericControllerREST controller;
+    private GenericControllerAPI controller;
 
     Pageable pageable;
 

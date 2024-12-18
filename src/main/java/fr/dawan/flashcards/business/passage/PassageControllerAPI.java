@@ -1,18 +1,17 @@
 package fr.dawan.flashcards.business.passage;
 
-import fr.dawan.flashcards.business.generic.GenericControllerREST;
+import fr.dawan.flashcards.business.generic.GenericControllerAPI;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/passages")
-public class PassageControllerREST extends GenericControllerREST<PassageDto, PassageService> {
+public class PassageControllerAPI extends GenericControllerAPI<PassageDto, PassageService> {
 	
-	public PassageControllerREST(PassageService service) {
+	public PassageControllerAPI(PassageService service) {
 		super(service);
 	}
 	

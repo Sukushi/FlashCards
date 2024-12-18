@@ -34,7 +34,8 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 	public PassageDto insertPassage(long userId, long cardId, Niveau niveau, LocalDate date) {
 		CardDto cardDto = new CardDto();
 		cardDto.setId(cardId);
-		PassageDto dto = new PassageDto(0, 0, /*cardId,*/ cardDto, niveau, niveau.getDuree(), date, userId);
+		PassageDto dto = new PassageDto(cardDto, niveau, niveau.getDuree(), date, userId);
+		dto.setId(0).setVersion(0);
 		Passage entity = mapper.toEntity(dto);
 		Passage saved = repository.save(entity);
 		return mapper.toDto(saved);
