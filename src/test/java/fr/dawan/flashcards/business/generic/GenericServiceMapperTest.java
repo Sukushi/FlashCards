@@ -37,7 +37,8 @@ class GenericServiceMapperTest {
         //ARRANGE
         long id = 1;
         Card card = new Card("Dependance", Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
-        CardDto dto = new CardDto(id,0,"dependance",Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
+        CardDto dto = new CardDto("dependance",Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
+		dto.setId(id).setVersion(0);
 
 
 
