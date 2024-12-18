@@ -1,22 +1,22 @@
 package fr.dawan.flashcards.business.passage;
 
 import fr.dawan.flashcards.business.card.CardDto;
+import fr.dawan.flashcards.business.generic.BaseEntityDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
+@Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
-public class PassageDto {
-    private long id;
-    private int version;
-    /*private long cardId;*/
-    private CardDto card; // pour utiliser le post mapping plus facilement
+public class PassageDto extends BaseEntityDto {
+    private CardDto card;
     private Niveau niveau;
 	private int duree;
 	private LocalDate dateUpdate;
