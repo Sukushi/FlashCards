@@ -4,6 +4,8 @@ import fr.dawan.flashcards.business.card.Card;
 import fr.dawan.flashcards.business.card.CardRepository;
 import fr.dawan.flashcards.business.card.Category;
 import fr.dawan.flashcards.business.passage.*;
+import fr.dawan.flashcards.business.user.Role;
+import fr.dawan.flashcards.business.user.User;
 import fr.dawan.flashcards.business.user.UserRepository;
 import fr.dawan.flashcards.security.auth.AuthServiceBDD;
 import fr.dawan.flashcards.security.auth.RegisterDto;
@@ -12,6 +14,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -29,6 +32,8 @@ public class FlashCardsApplication implements CommandLineRunner {
 	AuthServiceBDD authService;
 	@Autowired
 	PassageServiceBDD passageService;
+	@Autowired
+	PasswordEncoder encoder;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
@@ -38,8 +43,6 @@ public class FlashCardsApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		System.out.println("\t>>>>>>>>> Run before App\n");
-		System.out.println("\t>>>>>>>>> creer les objets CArtes\n");
-		System.out.println("\t>>>>>>>>> Les persister en BDD\n");
 
 		/*
 		cardRepository.save(new Card("", Category.TEST, "",""));
@@ -152,6 +155,13 @@ public class FlashCardsApplication implements CommandLineRunner {
 		}
 
 		if (userRepository.findAll().isEmpty()) {
+			// ajoute des utilisateurs avec un role (pour pouvoir tester l'appli)
+			// besoin d'encoder le mot de passe car on ne passe pas par 'register' donc on ajoute le mot de passe comme il est défini dans le 'User'
+			userRepository.saveAll(List.of(
+					new User("User",encoder.encode("user"),"user@mail.com",List.of(Role.USER)),
+					new User("Admin",encoder.encode("admin"),"admin@mail.com",List.of(Role.USER,Role.MODO,Role.ADMIN)),
+					new User("Modo",encoder.encode("modo"),"modo@mail.com",List.of(Role.USER,Role.MODO))));
+			// ajoute des utilisateurs avec 'register' (donc uniquement avec le rôle USER)
 			authService.register(new RegisterDto("baptiste","baptou","baptiste.l@gmail.com"));
 			authService.register(new RegisterDto("romain","roro","romain.c@gmail.com"));
 			authService.register(new RegisterDto("yanis","yanou","yanis.a@gmail.com"));
@@ -160,10 +170,21 @@ public class FlashCardsApplication implements CommandLineRunner {
 			authService.register(new RegisterDto("titouan","titou","titouan.m@gmail.com"));
 		}
 		
-		List<Passage> passages = passageRepository.findByUserId(1, Pageable.ofSize(10)).toList();
-		System.out.println(passages);
 		try {
 			passageService.insertPassage(1,3);
+			passageService.insertPassage(1,41);
+			passageService.insertPassage(1,42);
+			passageService.insertPassage(1,43);
+			passageService.insertPassage(1,44);
+			passageService.insertPassage(1,20);
+			passageService.insertPassage(1,21);
+			passageService.insertPassage(1,22);
+			passageService.insertPassage(1,2);
+			passageService.insertPassage(1,24);
+			passageService.insertPassage(1,25);
+			passageService.insertPassage(1,26);
+			passageService.insertPassage(1,27);
+			passageService.insertPassage(1,26);
 			passageService.insertPassage(2,5);
 			passageService.insertPassage(2,6);
 			passageService.insertPassage(2,7);
@@ -178,20 +199,13 @@ public class FlashCardsApplication implements CommandLineRunner {
 			passageService.insertPassage(2,16);
 			passageService.insertPassage(2,17);
 			passageService.insertPassage(2,36);
-			passageService.insertPassage(1,41);
-			passageService.insertPassage(1,42);
-			passageService.insertPassage(1,43);
-			passageService.insertPassage(1,44);
-			passageService.insertPassage(1,20);
-			passageService.insertPassage(1,21);
-			passageService.insertPassage(1,22);
-			passageService.insertPassage(1,2);
-			passageService.insertPassage(1,24);
-			passageService.insertPassage(1,25);
-			passageService.insertPassage(1,26);
-			passageService.insertPassage(1,27);
-			passageService.insertPassage(1,26);
-
+			// CECI EST UN TEST JE REPETE
+//			passageService.insertPassage(250,3);
+//			passageService.insertPassage(2,250);
+//			passageService.insertPassage(250,250);
+//			passageService.insertPassage(1,70);
+//			passageService.insertPassage(1,69);
+//			passageService.insertPassage(1,68);
 		} catch (Exception e) {
 			// ignorer
 		}

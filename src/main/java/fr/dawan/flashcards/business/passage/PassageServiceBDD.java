@@ -31,13 +31,17 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 	
 	// elle nous sert pour le dev pour remplir notre BDD mais devra être supprimé en prod
 	@Override
-	public PassageDto insertPassage(long userId, long cardId) {
+	public PassageDto insertPassage(long userId, long cardId, Niveau niveau, LocalDate date) {
 		CardDto cardDto = new CardDto();
 		cardDto.setId(cardId);
-		PassageDto dto = new PassageDto(0, 0, /*cardId,*/ cardDto, Niveau.NIVEAU1, LocalDate.of(2024,1,1), userId);
+		PassageDto dto = new PassageDto(0, 0, /*cardId,*/ cardDto, niveau, niveau.getDuree(), date, userId);
 		Passage entity = mapper.toEntity(dto);
 		Passage saved = repository.save(entity);
 		return mapper.toDto(saved);
+	}
+	// overload insertPassage avec des valeurs par défault (les paramètres de la fonction ne sont plus nécessaires)
+	public PassageDto insertPassage(long userId, long cardId) {
+		return insertPassage(userId, cardId, Niveau.NIVEAU1, LocalDate.of(2024,1,1));
 	}
 
 	@Override

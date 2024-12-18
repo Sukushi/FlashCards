@@ -16,8 +16,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 @EnableWebSecurity
@@ -26,14 +30,30 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SecurityConfig {
 	private final UserDetailsService userDetailsService;
 	private final JwtFilter jwtFilter;
+	// TODO : faire une map au lieu de plusieurs tableaux
 	public static final String[] AUTHORIZED_URL = new String[] {
 			"/",
 			"/home",
 			"/auth/**",
 			"/public/**",
-			"/api/**"
+			"/api/v1/cards",
+			"/api/v1/passages/**"
 	};
-
+	public static final Map<HttpMethod, String[]> AUTHORIZED_METHOD = Map.of(
+		HttpMethod.GET,new String[] {
+				"/api/v1/cards/**"
+		},
+		HttpMethod.POST,new String[] {
+		
+		},
+		HttpMethod.PUT,new String[] {
+		
+		},
+		HttpMethod.DELETE,new String[] {
+		
+		}
+	);
+	
 	@Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -51,8 +71,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 						.requestMatchers(AUTHORIZED_URL).permitAll()
-						.anyRequest().permitAll())
+						.requestMatchers(HttpMethod.GET,AUTHORIZED_METHOD.get(HttpMethod.GET)).permitAll()
+						.requestMatchers(HttpMethod.POST,AUTHORIZED_METHOD.get(HttpMethod.POST)).permitAll()
+						.requestMatchers(HttpMethod.PUT,AUTHORIZED_METHOD.get(HttpMethod.PUT)).permitAll()
+						.requestMatchers(HttpMethod.DELETE,AUTHORIZED_METHOD.get(HttpMethod.DELETE)).permitAll()
+						.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 				.userDetailsService(userDetailsService)
 				.build();
     }

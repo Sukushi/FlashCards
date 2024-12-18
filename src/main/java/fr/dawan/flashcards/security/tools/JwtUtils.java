@@ -20,7 +20,7 @@ public class JwtUtils {
     }
 
     private static final String SECRET_KEY = "secret5414dqedj2Rdsfmldkm_!R%)45";
-    private static final long TOKEN_DURATION = Duration.ofHours(1).toMillis(); // 1H
+    private static final long TOKEN_DURATION = Duration.ofHours(2).toMillis(); // 1H
     private static final long REFRESH_TOKEN_DURATION = Duration.ofDays(7).toMillis(); // 1H
 
     public static String extractUsername(String token) {

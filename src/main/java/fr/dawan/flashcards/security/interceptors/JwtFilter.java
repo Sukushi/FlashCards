@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +20,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 @Component
 @RequiredArgsConstructor
@@ -28,9 +30,9 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         log.info("request.getRequestURI() = " + request.getRequestURI());
-        if (!request.getMethod().equals("OPTIONS") && isInterceptedUri(request.getRequestURI())) {
+        if (!request.getMethod().equals("OPTIONS") && isInterceptedUri(request)) {
             String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-            if (authHeader == null || authHeader.startsWith("Bearer ")) {
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
                 throw new ServletException("Invalid Authorization");
             }
             String token = authHeader.substring(7);
@@ -51,9 +53,14 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request,response);
     }
 
-    private boolean isInterceptedUri(String uri) {
-        return Arrays.stream(SecurityConfig.AUTHORIZED_URL)
-                .map(url -> url.replace("**",".*"))
-                .noneMatch(uri::matches);
+    private boolean isInterceptedUri(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+        return !(isInterceptedInList(uri, SecurityConfig.AUTHORIZED_METHOD.get(HttpMethod.valueOf(request.getMethod()))) || isInterceptedInList(uri, SecurityConfig.AUTHORIZED_URL));
     }
+	
+	private boolean isInterceptedInList(String uri, String[] array) {
+		return Arrays.stream(array)
+				.map(url -> url.replace("**",".*"))
+				.anyMatch(uri::matches);
+	}
 }

@@ -39,8 +39,8 @@ class GenericServiceBDDTest {
 		Card card2 = new Card("Implementation",Category.JAVA,"Qu'est qu'une implémentation ?","Une implémentation c'est...");
 		Page<Card> entities = new PageImpl<>(List.of(card1,card2));
 		
-		CardDto dto1 = new CardDto(0L,0,"dependance","JAVA","Qu'est qu'une dépendance ?","Une dépendance c'est...");
-		CardDto dto2 = new CardDto(0L,0,"implementation","JAVA","Qu'est qu'une implémentation ?","Une implémentation c'est...");
+		CardDto dto1 = new CardDto(0L,0,"dependance",Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
+		CardDto dto2 = new CardDto(0L,0,"implementation",Category.JAVA,"Qu'est qu'une implémentation ?","Une implémentation c'est...");
 		List<CardDto> expected = List.of(dto1,dto2);
 		
 		// Act
@@ -59,7 +59,7 @@ class GenericServiceBDDTest {
 	void findById_test() {
 		long id = 1;
 		Card card = new Card("Dependance", Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
-		CardDto dto = new CardDto(id,0,"dependance","JAVA","Qu'est qu'une dépendance ?","Une dépendance c'est...");
+		CardDto dto = new CardDto(id,0,"dependance",Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
 		
 		when(repository.findById(1L)).thenReturn(Optional.of(card));
 		when(mapper.toDto(card)).thenReturn(dto);
@@ -74,7 +74,7 @@ class GenericServiceBDDTest {
 	@DisplayName("saveOrUpdate()")
 	void saveOrUpdate_test() {
 		Card card = new Card("Dependance", Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
-		CardDto dto = new CardDto(1L,0,"dependance","JAVA","Qu'est qu'une dépendance ?","Une dépendance c'est...");
+		CardDto dto = new CardDto(1L,0,"dependance",Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
 		
 		when(repository.save(any())).thenReturn(card);
 		when(mapper.toEntity(dto)).thenReturn(card);
