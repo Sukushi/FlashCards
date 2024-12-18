@@ -35,13 +35,19 @@ public class FlashCardsApplication implements CommandLineRunner {
 	@Autowired
 	PasswordEncoder encoder;
 	
+	private static String SECRET;
+	
+	public static String getSecret() {
+		return SECRET;
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(FlashCardsApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		SECRET = args[0];
 		System.out.println("\t>>>>>>>>> Run before App\n");
 
 		/*

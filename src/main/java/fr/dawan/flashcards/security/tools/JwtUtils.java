@@ -1,5 +1,6 @@
 package fr.dawan.flashcards.security.tools;
 
+import fr.dawan.flashcards.FlashCardsApplication;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -17,11 +18,11 @@ import java.util.function.Function;
 public class JwtUtils {
 
     private JwtUtils() {
-    }
+	}
 
-    private static final String SECRET_KEY = "secret5414dqedj2Rdsfmldkm_!R%)45";
-    private static final long TOKEN_DURATION = Duration.ofHours(2).toMillis(); // 1H
-    private static final long REFRESH_TOKEN_DURATION = Duration.ofDays(7).toMillis(); // 1H
+    private static final String SECRET_KEY = FlashCardsApplication.getSecret();
+    private static final long TOKEN_DURATION = Duration.ofHours(2).toMillis();
+    private static final long REFRESH_TOKEN_DURATION = Duration.ofDays(7).toMillis();
 
     public static String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
