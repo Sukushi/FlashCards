@@ -28,7 +28,7 @@ public class User extends BaseEntity implements UserDetails {
     et enfin ses rôles
      */
     private String name;
-    private String password; // spring security à implémenter
+    private String password;
     @OneToMany(mappedBy = "user")
 	@ToString.Exclude
 	private List<Passage> tiroir;
@@ -64,7 +64,6 @@ public class User extends BaseEntity implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.stream(Objects.toString(getRoles(), "PUBLIC").split(",")).map(SimpleGrantedAuthority::new).toList();
-        //return roles;
     }
 
     @Override

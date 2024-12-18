@@ -11,10 +11,4 @@ public interface CardRepository extends JpaRepository<Card,Long> {
 	/*Page<Card> findByCategory(String category, Pageable pageable);
 	Page<Card> findByKeywords(String word, Pageable pageable);
 	Page<Card> findByNiveau(Niveau niveau, Pageable pageable);*/
-
-	// Déclarer les signatures des méthodes d'import / export
-	// From CSV
-	//Page<Card> importCSV(List<Card> cartes);
-	// To CSV
-
 }

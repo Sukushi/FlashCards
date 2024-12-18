@@ -29,8 +29,7 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		return repository.findByUserId(userId,pageable).map(mapper::toDto);
 	}
 	
-	// elle nous sert pour le dev pour remplir notre BDD mais devra être supprimé en prod
-	@Override
+	// FIXME : elle nous sert pour le dev pour remplir notre BDD mais devra être supprimé en prod
 	public PassageDto insertPassage(long userId, long cardId, Niveau niveau, LocalDate date) {
 		CardDto cardDto = new CardDto();
 		cardDto.setId(cardId);
@@ -74,7 +73,4 @@ public class PassageServiceBDD extends GenericServiceBDD<Passage,PassageReposito
 		List<PassageDto> dailyAll = getDailyAll(userId);
 		return dailyAll.get(random.nextInt(dailyAll.size()));
 	}
-
-	// TODO : Améliorer encore la compréhension et l'assimilation de ci-dessus
-
 }
