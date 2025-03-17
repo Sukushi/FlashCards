@@ -30,17 +30,16 @@ import java.util.Map;
 public class SecurityConfig {
 	private final UserDetailsService userDetailsService;
 	private final JwtFilter jwtFilter;
-	// TODO : faire une map au lieu de plusieurs tableaux
+	
 	public static final String[] AUTHORIZED_URL = new String[] {
 			"/",
 			"/home",
 			"/auth/**",
-			"/public/**",
-			"/api/v1/cards",
-			"/api/v1/passages/**"
+			"/public/**"
 	};
 	public static final Map<HttpMethod, String[]> AUTHORIZED_METHOD = Map.of(
 		HttpMethod.GET,new String[] {
+				"/api/v1/cards",
 				"/api/v1/cards/**"
 		},
 		HttpMethod.POST,new String[] {
@@ -84,9 +83,7 @@ public class SecurityConfig {
 	
 	@Bean
 	public WebMvcConfigurer myMvcConfigurer() {
-		
 		return new WebMvcConfigurer() {
-			
 			// CORS ORIGIN
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {

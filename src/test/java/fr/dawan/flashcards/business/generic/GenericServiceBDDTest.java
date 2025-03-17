@@ -27,7 +27,9 @@ class GenericServiceBDDTest {
 	
 	@BeforeEach
 	void setUp() {
-		service = mock(GenericServiceBDD.class, withSettings().useConstructor(repository,mapper).defaultAnswer(CALLS_REAL_METHODS));
+		service = mock(GenericServiceBDD.class, withSettings()
+												.useConstructor(repository,mapper)
+												.defaultAnswer(CALLS_REAL_METHODS));
 		pageable = Pageable.unpaged();
 	}
 	
@@ -59,16 +61,19 @@ class GenericServiceBDDTest {
 	@Test
 	@DisplayName("findById()")
 	void findById_test() {
+		// Arrange
 		long id = 1;
-		Card card = new Card("Dependance", Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
+		Card card = new Card("dependance", Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
 		CardDto dto = new CardDto("dependance",Category.JAVA,"Qu'est qu'une dépendance ?","Une dépendance c'est...");
 		dto.setId(id).setVersion(0);
 		
+		// Act
 		when(repository.findById(1L)).thenReturn(Optional.of(card));
 		when(mapper.toDto(card)).thenReturn(dto);
 		
 		Optional result = service.findById(id);
 		
+		// Assert
 		assertTrue(result.isPresent());
 		assertInstanceOf(CardDto.class, result.get());
 	}

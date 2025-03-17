@@ -38,7 +38,7 @@ public class JwtUtils {
     }
 
     private static Claims extractAllClaims(String token) {
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(FlashCardsApplication.getSecret()).parseClaimsJws(token).getBody();
     }
 
     public static Boolean isTokenExpired(String token) {
@@ -66,7 +66,7 @@ public class JwtUtils {
 
         return Jwts.builder().setClaims(getClaims(userDetails)).setSubject(userDetails.getUsername()).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(expiration)
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .signWith(SignatureAlgorithm.HS256, FlashCardsApplication.getSecret())
                 .compact();
     }
 
